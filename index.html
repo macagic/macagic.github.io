@@ -1,2 +1,341 @@
 # macagic-github.io
 贪吃蛇
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 笔记</title>
+</head>
+
+<body>
+    <h1 id='live'>你好 (一级标签) 6个，到h6，大小依次减小</h1>
+    <a href='#wei'>返回尾部</a>
+    <h2>!DOCTYPE html 表示采用html5版本来显示网页</h2>
+    <h2> (p)是段落标签 (br/)break，单标签，强制换行</h2>
+    <p> html lang="en" 表示定义该网页为英文网页</p>
+    <p> zh-CN 中文网页</p>
+    <p>换行测试1<br/>换行测试2</p>
+    <br>文本格式化标签测试，4种
+    <br/> <b>粗体文字，strong或b</b>
+    <br/> <i>倾斜，em或i</i>
+    <br/> <s>删除线,del或s</s>
+    <br/> <u>下划线，ins或u</u>
+    <br/>
+    <br/>无语义盒子(div,一个独占一行)(span，一行可多个)
+    <br/>
+    <img src='https://www.baidu.com/img/PC_880906d2a4ad95f5fafb2e540c5cdad7.png' alt='替换文本' title='鼠标放到图片上的提示信息 为防止图片变形w..h..只设置一个 各属性没先后顺序' width=300 border='15'>
+    <br/>
+    <br/>顺便一提，前后都有的代表一行
+    <a href='http://www.qq.com' target="_self">
+        <h1>腾讯(默认当前页面打开)</h1>
+    </a>
+    <a href='http://www.qq.com' target="_blank">
+        <h1>腾讯(新页面打开)</h1>
+    </a>
+    <br/>
+    <a href='第一个html.html'>
+        <h2>跳转本地页面，换页</h2>
+    </a>
+    <br/>
+    <a href='https://files.pythonhosted.org/packages/88/d9/761f0b1e0551a3559afe4d34bd9bf68fc8de3292363b3775dda39b62ce84/pip-22.0.3.tar.gz'>如果是zip，exe等，会下载 ,这里是随便的一个东西</a>
+    <br/>
+    <a href='http://baidu.com'>
+        <img src='https://www.baidu.com/img/PC_880906d2a4ad95f5fafb2e540c5cdad7.png' width=30 border='5'>图片链接</a>
+    <br/>
+    <br/>
+    <a href='#live' id='wei'>锚点链接</a>
+    <!-- 代码内注释，真香 -->
+    <!--&nbsp; 空格键  &lt;小于号   &gt; 大于号  -->
+    &nbsp;&nbsp; &lt; p &gt; 是一个段落标签
+
+    <p>“超文本”是超级文本的中文缩写。 [1] 超文本是用超链接的方法，将各种不同空间的文字信息组织在一起的网状文本。超文本更是一种用户界面范式，用以显示文本及与文本之间相关的内容。现时超文本普遍以电子文档方式存在，其中的文字包含有可以链结到其他位置或者文档的连结，允许从当前阅读位置直接切换到超文本连结所指向的位置。超文本的格式有很多，最常使用的是超文本标记语言（标准通用标记语言下的一个应用）及富文本格式。
+    </p>
+
+
+    <!-- <table> -->
+    <table border="1">
+        <!-- <table border="1" cellpanding="40" cellspacing="90" height="90" width="900"> -->
+        <tr>
+            <!-- th表头单元格，加粗居中 -->
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+        <tr>
+            <td>叶大佬</td>
+            <td>谜一样的</td>
+            <td>male</td>
+        </tr>
+        <tr>
+            <td>叶</td>
+            <td>谜</td>
+            <td>male</td>
+        </tr>
+    </table>
+    <br/>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>排名</th>
+                <th>关键词</th>
+                <th>趋势</th>
+                <th>进入搜索</th>
+                <th>最近七日</th>
+                <th>相关链接</th>
+            </tr>
+        </thead>
+        <某box>
+            <tr>
+                <td>1</td>
+                <td>鬼吹灯</td>
+                <td><img src="https://rmrbcmsonline.peopleapp.com/upload/ueditor/image/20191014/a_368279657553850368.jpg?x-oss-process=image/format,jpg"></td>
+                <td>456</td>
+                <td>123</td>
+                <td><a href="#">贴吧</a> <a href="#">图片</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>孙悟空</td>
+                <td><img src="https://rmrbcmsonline.peopleapp.com/upload/ueditor/image/20191014/a_368279657553850368.jpg?x-oss-process=image/format,jpg"></td>
+                <td>456</td>
+                <td>123</td>
+                <td><a href="#">贴吧</a> <a href="#">图片</a></td>
+            </tr>
+        </某box>
+    </table>
+    <br/>
+    <table border="1" cellpanding="" cellspacing="0" width="400" height="300">
+        <tr>
+            <td>空</td>
+            <td colspan="2">总是空</td>
+        </tr>
+        <tr>
+            <td rowspan="2">竹篮打水一场空</td>
+            <td>一场空</td>
+            <td>空</td>
+        </tr>
+        <tr>
+            <td>空</td>
+            <td>空空</td>
+        </tr>
+    </table>
+    <br/>
+    <ul>
+        <li>无序列表</li>
+        <li>无序列表</li>
+    </ul>
+    <br/>
+    <ol>
+        <li>有序列表1</li>
+        <li>有序列表2</li>
+        <li>有序列表3</li>
+    </ol>
+    <!-- OL、和ul里规范起见，仅允许li -->
+    <dl>
+        <dt>一般为小标题，头内容</dt>
+        <dd>围绕其说明的</dd>
+    </dl>
+    <!-- 自定义列表 -->
+    <br/>
+    <!-- 表单 表单域，提示信息，表单控件  -->
+    <!-- <form action="test.py" style=" background:rgb(0, 255, 76) "> -->
+    <form action="test.py" style=" background:rgb(0, 255, 76) " method="get">
+
+        <!-- width:400px; ..... -->
+        <br>
+        <p>用户名：<input type="text" value="叶" name="username"></p>
+        <p>密码：&nbsp;&nbsp;&nbsp;<input type="password" name="psw"></p>
+        <!-- 单选按钮  为实现单选还需要name -->
+        <p>性别:男<input type="radio" id="sm" name="sex" value="男" checked="checked"> 女<input type="radio" value="女" id="sw" name="sex"></p>
+        <!-- 复选框 -->
+        <!-- 规范起见一组要加同name -->
+        <p>爱好:a <input type="checkbox" name="hobby" value="a"> b <input type="checkbox" name="hobby" value="b"></p>
+        <!-- checked可以用于input 单选按钮和复选框 ,默认选择 -->
+        <p>&nbsp;<input type="submit" value="提交吧"></p>
+        <p>&nbsp;<input type="reset" value="重新填写"></p>
+        <p> 上传头像 <input type="file"></p>
+        <!--  -->
+        <p><label for="sm">【男】</label></p>
+        <p><label for="sw">【女】</label></p>
+        <dd>
+            <!-- 对上面那个进行整改结构，且实现点文字也能选中 -->
+            <label>性别:</label>
+            <input type="radio" id="m" name="性别" value="男">
+            <label for="m">【男】</label>
+            <input type="radio" id="w" name="性别" value="女">
+            <label for="w">【女】</label>
+        </dd>
+        <label>籍贯:</label>
+        <select name="籍贯">
+            <option value="火星">火星</option>
+            <option value="水星">水星</option>
+            <option value="地球" >地球</option>
+            <option value="月球"selected="selected">月球</option>
+            <option value="M78">M78</option>
+        </select>
+        <br>
+        <textarea cols="30" rows="10">
+            反馈留言框使用textarea
+    </textarea>
+    </form>
+    <br>
+    <br>
+    <br>
+    <h4>青春不常在，尽情去触碰那些未知吧</h4>
+    <!-- <table width="500" border="1"> -->
+    <table width="500">
+        <!-- 第一行 -->
+        <tr>
+            <td>性别:</td>
+            <td>
+                <input type="radio" name="sex" id="man" value="男生">
+                <label for="man">
+                    <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F32%2F20%2F5810e34f4c757_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647059177&t=f9c42a0ca93d479b703fc5c44b0ded1e"
+                        width="25">男
+                </label>
+                <input type="radio" name="sex" id="women" value="女生">
+                <label for="women">
+                    <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F38%2F78%2F5812c1f04bc03_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647059282&t=8c5848bd022468bebed2f3bb6c78286b"
+                        width="25">女
+                </label>
+            </td>
+        </tr>
+        <!-- 第二行 -->
+        <tr>
+            <td>生日:</td>
+            <td>
+                <select>
+                    <option>--请选择年份--</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                </select>
+                <select>
+                    <option>--请选择月份--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select>
+                    <option>--请选择日--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+            </td>
+        </tr>
+        <!-- 第三行 -->
+        <tr>
+            <td>所在地区：</td>
+            <td>
+                <input type="text" value="M78星云">
+            </td>
+        </tr>
+        <!-- 第四行 -->
+        <tr>
+            <td>婚姻状况：</td>
+            <td>
+                <input type="radio" name="marry" checked="checked" value="未婚">未婚
+                <input type="radio" name="marry" value="已婚">已婚
+                <input type="radio" name="marry" value="待婚">待婚
+            </td>
+        </tr>
+        <!-- 第五行 -->
+        <tr>
+            <td>学历:</td>
+            <td>
+                <input type="text" name="学历" value="幼儿园">
+            </td>
+        </tr>
+        <!-- 第六行 -->
+        <tr>
+            <td>喜欢的：</td>
+            <td>
+                <input type="checkbox" name="like">高数
+                <input type="checkbox" name="like">英语
+                <input type="checkbox" name="like">工图
+                <input type="checkbox" name="like">游戏
+            </td>
+        </tr>
+        <!-- 第七行 -->
+        <tr>
+            <td>个人简介</td>
+            <td>
+                <textarea name="个人简介" cols="30" rows="10"></textarea>
+            </td>
+        </tr>
+        <!-- 第八行 -->
+        <tr>
+            <td></td>
+            <td>
+                <input type="checkbox" name="" id="" checked="checked"> 我同意注册条款和会员加入标准
+            </td>
+        </tr>
+        <!--  -->
+        <tr>
+            <td></td>
+            <td>
+                <a href="#">我是会员，立刻登录</a>
+            </td>
+
+        </tr>
+        <!-- 最后的第九行 -->
+        <tr>
+            <td></td>
+            <td>
+                <h5>我承诺</h5>
+                <ul>
+                    <li>年满18岁</li>
+                    <li>抱着严谨的态度</li>
+                    <li>真诚探寻真理</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+
+
+</html>
