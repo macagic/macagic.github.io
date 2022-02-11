@@ -7,11 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document 笔记</title>
+    <style>
+        body {
+            background-image: url('https://static.runoob.com/images/mix/paper.gif');
+            background-color: #cccccc;
+        }
+        
+        .pics {
+            background-image: url('https://img0.baidu.com/it/u=2090683447,1450841930&fm=224&fmt=auto&gp=0.jpg');
+        }
+        
+        .blue {
+            color: rgb(8, 69, 235);
+            text-indent: 30px;
+        }
+        
+        .yellow {
+            color: rgb(235, 193, 8);
+            font-size: 19px;
+        }
+    </style>
+    <link rel="shortcut icon" href="ta.ico" type="image/x-icon">
 </head>
 
 <body>
     <h1 id='live'>你好 (一级标签) 6个，到h6，大小依次减小</h1>
-    <a href='#wei'>返回尾部</a>
+    <a href='#wei'>到锚点链接</a>
     <h2>!DOCTYPE html 表示采用html5版本来显示网页</h2>
     <h2> (p)是段落标签 (br/)break，单标签，强制换行</h2>
     <p> html lang="en" 表示定义该网页为英文网页</p>
@@ -39,19 +60,19 @@
         <h2>跳转本地页面，换页</h2>
     </a>
     <br/>
-    <a href='snake.py'>如果是zip，exe等（反正是不能网页直接展示的，都不是打开，而是下载）,这里是会下载一个贪吃蛇py文件</a>
+    <a href='https://files.pythonhosted.org/packages/88/d9/761f0b1e0551a3559afe4d34bd9bf68fc8de3292363b3775dda39b62ce84/pip-22.0.3.tar.gz'>如果是zip，exe等，会下载 ,这里是随便的一个东西</a>
     <br/>
     <a href='http://baidu.com'>
-        <img src='https://www.baidu.com/img/PC_880906d2a4ad95f5fafb2e540c5cdad7.png' width=30 border='5'>图片链接</a>
-    
+        <img src='https://www.baidu.com/img/PC_880906d2a4ad95f5fafb2e540c5cdad7.png' width=70>←左边图片也是一个链接
+    </a>
     <br/>
     <br/>
     <a href='#live' id='wei'>锚点链接</a>
-    <!-- 使用Ctrl加反斜杠，可以写代码内注释，真香 -->
+    <!-- 代码内注释，真香 -->
     <!--&nbsp; 空格键  &lt;小于号   &gt; 大于号  -->
     &nbsp;&nbsp; &lt; p &gt; 是一个段落标签
 
-    <p>“超文本”是超级文本的中文缩写。 [1] 超文本是用超链接的方法，将各种不同空间的文字信息组织在一起的网状文本。超文本更是一种用户界面范式，用以显示文本及与文本之间相关的内容。现时超文本普遍以电子文档方式存在，其中的文字包含有可以链结到其他位置或者文档的连结，允许从当前阅读位置直接切换到超文本连结所指向的位置。超文本的格式有很多，最常使用的是超文本标记语言（标准通用标记语言下的一个应用）及富文本格式。
+    <p class="blue">“超文本”是超级文本的中文缩写。<a href="#form-青春" style="color: blue;">[ 1 ]</a> 超文本是用超链接的方法，将各种不同空间的文字信息组织在一起的网状文本。超文本更是一种用户界面范式，用以显示文本及与文本之间相关的内容。现时超文本普遍以电子文档方式存在，其中的文字包含有可以链结到其他位置或者文档的连结，允许从当前阅读位置直接切换到超文本连结所指向的位置。超文本的格式有很多，最常使用的是超文本标记语言（标准通用标记语言下的一个应用）及富文本格式。
     </p>
 
 
@@ -87,7 +108,7 @@
                 <th>相关链接</th>
             </tr>
         </thead>
-        <某box>
+        <div>
             <tr>
                 <td>1</td>
                 <td>鬼吹灯</td>
@@ -104,10 +125,10 @@
                 <td>123</td>
                 <td><a href="#">贴吧</a> <a href="#">图片</a></td>
             </tr>
-        </某box>
+        </div>
     </table>
     <br/>
-    <table border="1" cellpanding="" cellspacing="0" width="400" height="300">
+    <table class="pics" border="1" cellpanding="" cellspacing="0" width="400" height="300">
         <tr>
             <td>空</td>
             <td colspan="2">总是空</td>
@@ -143,7 +164,6 @@
     <!-- 表单 表单域，提示信息，表单控件  -->
     <!-- <form action="test.py" style=" background:rgb(0, 255, 76) "> -->
     <form action="test.py" style=" background:rgb(0, 255, 76) " method="get">
-
         <!-- width:400px; ..... -->
         <br>
         <p>用户名：<input type="text" value="叶" name="username"></p>
@@ -157,17 +177,9 @@
         <p>&nbsp;<input type="submit" value="提交吧"></p>
         <p>&nbsp;<input type="reset" value="重新填写"></p>
         <p> 上传头像 <input type="file"></p>
-        <!--  -->
+        <!--         
         <p><label for="sm">【男】</label></p>
-        <p><label for="sw">【女】</label></p>
-        <dd>
-            <!-- 对上面那个进行整改结构，且实现点文字也能选中 -->
-            <label>性别:</label>
-            <input type="radio" id="m" name="性别" value="男">
-            <label for="m">【男】</label>
-            <input type="radio" id="w" name="性别" value="女">
-            <label for="w">【女】</label>
-        </dd>
+        <p><label for="sw">【女】</label></p> -->
         <label>籍贯:</label>
         <select name="籍贯">
             <option value="火星">火星</option>
@@ -177,14 +189,26 @@
             <option value="M78">M78</option>
         </select>
         <br>
-        <textarea cols="30" rows="10">
-            反馈留言框使用textarea
-    </textarea>
+        <textarea class="pics" cols="30" rows="10">
+            留言框使用textarea，(试着拉下它的右下角)
+        </textarea>
+
     </form>
     <br>
     <br>
+    <div class="yellow">
+        <!-- 对上面那个性别进行整改结构，且实现点文字也能选中 -->
+        <span>性别:</span>
+        <input type="radio" id="m" name="性别" value="男">
+        <label for="m">【男】</label>
+        <input type="radio" id="w" name="性别" value="女">
+        <label for="w">【女】</label>
+        <p>这里实现点文字也能选中</p>
+    </div>
     <br>
-    <h4>青春不常在，尽情去触碰那些未知吧</h4>
+    <br>
+    <!-- 下面为某修改的案例表单 -->
+    <h4 id="form-青春">青春不常在，尽情去触碰那些未知吧</h4>
     <!-- <table width="500" border="1"> -->
     <table width="500">
         <!-- 第一行 -->
@@ -333,9 +357,13 @@
             </td>
         </tr>
     </table>
-
+    <div style="text-align: center;">
+        <p class="blue">每一个星球都有一个驱动核心，</p>
+        <p class="blue">每一种思想都有影响力的种子。</p>
+        <p class="blue">感受世界的温度，</p>
+        <p class="blue">年轻的你也能成为改变世界的动力，</p>
+        <!-- 百度珍惜你所有的潜力。这是某度里的一段话 -->
+        <p class="blue">你的潜力，是改变世界的动力！</p>
+    </div>
 </body>
-
-
-
 </html>
