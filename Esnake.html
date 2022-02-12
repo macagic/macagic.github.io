@@ -25,6 +25,7 @@
             direction = 1, //1表示向右，-1表示向左，20表示向下，-20表示向上
             food = 43, //食物的位置
             n, //与下次移动的位置有关
+            nm = -1;
             box = document.getElementById('can').getContext('2d');
         //从0到399表示box里[0~19]*[0~19]的所有节点，每20px一个节点
         function draw(seat, color) {
@@ -41,12 +42,13 @@
             //此时的n为下次蛇头出现的位置，n进入队列
             if (snake.indexOf(n, 1) > 0 || n < 0 || n > 399 || direction == 1 && n % 20 == 0 || direction == -1 && n % 20 == 19) {
                 //if语句判断贪吃蛇是否撞到自己或者墙壁，碰到时返回，结束程序
-                return alert("GAME OVER!");
+                return alert("GAME OVER!" + nm +"分");
             }
             draw(n, "lime"); //画出蛇头下次出现的位置
             if (n == food) { //如果吃到食物时，产生一个蛇身以外的随机的点，不会去掉蛇尾
                 while (snake.indexOf(food = ~~(Math.random() * 400)) > 0);
                 draw(food, "yellow");
+                nm += 1;
             } else { //没有吃到食物时正常移动，蛇尾出队列
                 draw(snake.pop(), "black");
             }
