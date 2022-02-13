@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -22,7 +21,7 @@
 <body>
 
     <canvas id="can" width="400" height="400" style="background-color: black;">对不起，您的浏览器不支持canvas</canvas>
-    <script >
+    <script>
         var snake = [41, 40], //snake队列表示蛇身，初始节点存在但不显示
             direction = 1, //1表示向右，-1表示向左，20表示向下，-20表示向上
             food = 43, //食物的位置
@@ -30,6 +29,10 @@
             nm = 0
         box = document.getElementById('can').getContext('2d');
         //从0到399表示box里[0~19]*[0~19]的所有节点，每20px一个节点
+        function randint(x, y) {
+            return parseInt(Math.random() * (x - y + 1) + y);
+        }
+
         function draw(seat, color) {
             box.fillStyle = color;
             box.fillRect(seat % 20 * 20 + 1, ~~(seat / 20) * 20 + 1, 18, 18);
@@ -48,8 +51,7 @@
             }
             draw(n, "lime"); //画出蛇头下次出现的位置
             if (n == food) { //如果吃到食物时，产生一个蛇身以外的随机的点，不会去掉蛇尾
-                while (snake.indexOf(Math.floor(Math.random() * 379) + 21) > 0);
-              
+                while (snake.indexOf(food = randint(21, 379)) > 0);
                 draw(food, "yellow");
                 nm += 1
             } else { //没有吃到食物时正常移动，蛇尾出队列
@@ -59,5 +61,3 @@
         }();
     </script>
 </body>
-
-</html>
