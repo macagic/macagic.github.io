@@ -47,7 +47,7 @@
             }
             draw(n, "lime"); //画出蛇头下次出现的位置
             if (n == food) { //如果吃到食物时，产生一个蛇身以外的随机的点，不会去掉蛇尾
-                while (snake.indexOf(food = ~~(Math.random() * 400)) > 0);
+                while (snake.indexOf(food = ~~(Math.random() * 400)) > 0 && (!(food in [0, 20, 380, 400])));
                 draw(food, "yellow");
                 nm += 1
             } else { //没有吃到食物时正常移动，蛇尾出队列
