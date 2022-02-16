@@ -123,8 +123,21 @@
             s[k].style.left = x + "px";
             s[k].style.top = y + 20 * k + "px";
         }
-
-        function move(obj, direction) //控制移动函数开始
+        function game_over() {
+            alert("GAME OVER！" + "你的分数为：" + Fraction + "分");
+            food();
+            x = 300;
+            y = 400;
+            for (var k = 0; k < 5; k++) {
+                s[k].style.left = x + "px";
+                s[k].style.top = y + 20 * k + "px";
+            }
+            for (var kk = s.length - 1; kk > 4; kk--) {
+                s[kk].parentNode.removeChild(s[kk]);
+            }
+            return false;
+        }
+        function move(direction) //控制移动函数开始
         {
             clearTimeout(d);
             s = document.getElementsByClassName('num');
@@ -132,7 +145,6 @@
             l[0] = s[0].style.left;
             var w = new Array();
             w[0] = s[0].style.top;
-            obj; //移动方向
             s[0].style.left = x + "px";
             s[0].style.top = y + "px";
             for (var k1 = 1; k1 < s.length; k1++) {
@@ -145,21 +157,14 @@
                 var new_div = document.createElement('div');
                 new_div.className = "num";
                 Fraction += 100;
-                if (p == 1) {
+                // emmm,js没in的用法
+                var lst = [20, -20, -20, 20];
+                if (p == 1 || p == 2) {
                     new_div.style.top = s[0].style.top;
-                    new_div.style.left = parseInt(s[0].style.left) + 20 + "px";
-                }
-                if (p == 2) {
-                    new_div.style.top = s[0].style.top;
-                    new_div.style.left = parseInt(s[0].style.left) - 20 + "px";
-                }
-                if (p == 3) {
+                    new_div.style.left = (parseInt(s[0].style.left) + lst[p - 1]) + "px";
+                } else if (p == 3 || p == 4) {
                     new_div.style.left = s[0].style.left;
-                    new_div.style.top = parseInt(s[0].style.top) - 20 + "px";
-                }
-                if (p == 4) {
-                    new_div.style.left = s[0].style.left;
-                    new_div.style.top = parseInt(s[0].style.top) + 20 + "px";
+                    new_div.style.top = (parseInt(s[0].style.top) + lst[p - 1]) + "px";
                 }
                 s[0].parentNode.insertBefore(new_div, s[0]);
                 food();
@@ -169,110 +174,79 @@
                 }
             }
             if (parseInt(s[0].style.left) < 0 || parseInt(s[0].style.left) >= 500 || parseInt(s[0].style.top) < 0 || parseInt(s[0].style.top) >= 500) {
-                alert("GAME OVER！" + "你的分数为：" + Fraction + "分");
-                food();
-                x = 300;
-                y = 400;
-                for (var k = 0; k < 5; k++) {
-                    s[k].style.left = x + "px";
-                    s[k].style.top = y + 20 * k + "px";
-                }
-                for (var kk = s.length - 1; kk > 4; kk--) {
-                    s[kk].parentNode.removeChild(s[kk]);
-                }
-                return false;
+                game_over()
             }
             for (k = 1; k < s.length; k++) {
                 if (parseInt(s[0].style.left) == parseInt(s[k].style.left) && parseInt(s[0].style.top) == parseInt(s[k].style.top)) {
-                    alert("GAME OVER！" + "你的分数为：" + Fraction + "分");
-                    food();
-                    x = 300;
-                    y = 400;
-                    for (var k = 0; k < 5; k++) {
-                        s[k].style.left = x + "px";
-                        s[k].style.top = y + 20 * k + "px";
-                    }
-                    for (var kk = s.length - 1; kk > 4; kk--) {
-                        s[kk].parentNode.removeChild(s[kk]);
-                    }
-                    return false;
+                    game_over()
                 }
             }
-            d = setTimeout(direction, 80);
+            d = setTimeout(direction, 100);
         }
-        document.getElementById('btn1').onclick = function R() //绑定鼠标点击事件
-            {
-                x = parseInt(s[0].style.left);
-                y = parseInt(s[0].style.top);
-                if (parseInt(s[0].style.left) < parseInt(s[1].style.left)) return false;
-                p = 1;
-                move(x = x + 20, R);
-            }
-        document.getElementById('btn2').onclick = function L() {
+        function R() //绑定鼠标点击事件
+        {
+            x = parseInt(s[0].style.left);
+            y = parseInt(s[0].style.top);
+            if (parseInt(s[0].style.left) < parseInt(s[1].style.left)) return false;
+            p = 1;
+            x += 20,
+                move(R);
+        }
+
+        function L() {
             x = parseInt(s[0].style.left);
             y = parseInt(s[0].style.top);
             if (parseInt(s[0].style.left) > parseInt(s[1].style.left)) return false;
             p = 2;
-            move(x = x - 20, L);
+            x -= 20,
+                move(L);
         }
-        document.getElementById('btn3').onclick = function T() {
+
+        function T() {
             x = parseInt(s[0].style.left);
             y = parseInt(s[0].style.top);
             if (parseInt(s[0].style.top) > parseInt(s[1].style.top)) return false;
             p = 3;
-            move(y = y - 20, T);
+            y -= 20,
+                move(T);
         }
-        document.getElementById('btn4').onclick = function B() {
+
+        function B() {
             x = parseInt(s[0].style.left);
             y = parseInt(s[0].style.top);
             if (parseInt(s[0].style.top) < parseInt(s[1].style.top)) return false;
             p = 4;
-            move(y = y + 20, B);
+            y += 20;
+            move(B);
+        }
+        document.getElementById('btn1').onclick = function() {
+            R()
+        }
+        document.getElementById('btn2').onclick = function() {
+            L()
+        }
+        document.getElementById('btn3').onclick = function() {
+            T()
+        }
+        document.getElementById('btn4').onclick = function() {
+            B()
         }
         document.onkeydown = function(event) //绑定键盘事件
             {
                 var e = event || window.event;
                 if (e && e.keyCode == 39) {
-                    function R() {
-                        x = parseInt(s[0].style.left);
-                        y = parseInt(s[0].style.top);
-                        if (parseInt(s[0].style.left) < parseInt(s[1].style.left)) return false;
-                        p = 1;
-                        move(x = x + 20, R);
-                    }
                     R();
                     return false;
                 }
                 if (e && e.keyCode == 37) {
-                    function L() {
-                        x = parseInt(s[0].style.left);
-                        y = parseInt(s[0].style.top);
-                        if (parseInt(s[0].style.left) > parseInt(s[1].style.left)) return false;
-                        p = 2;
-                        move(x = x - 20, L);
-                    }
                     L();
                     return false;
                 }
                 if (e && e.keyCode == 38) {
-                    function T() {
-                        x = parseInt(s[0].style.left);
-                        y = parseInt(s[0].style.top);
-                        if (parseInt(s[0].style.top) > parseInt(s[1].style.top)) return false;
-                        p = 3;
-                        move(y = y - 20, T);
-                    }
                     T();
                     return false;
                 }
                 if (e && e.keyCode == 40) {
-                    function B() {
-                        x = parseInt(s[0].style.left);
-                        y = parseInt(s[0].style.top);
-                        if (parseInt(s[0].style.top) < parseInt(s[1].style.top)) return false;
-                        p = 4;
-                        move(y = y + 20, B);
-                    }
                     B();
                     return false;
                 }
