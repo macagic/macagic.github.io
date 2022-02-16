@@ -57,7 +57,9 @@
                 draw(food, "yellow");
                 nm += 1
             } else { //没有吃到食物时正常移动，蛇尾出队列
-                draw(snake.pop(), "black");
+                if (snake.indexOf(snake[-1]) = 1)
+                { //由于允许蛇头经过蛇身，为避免把身体涂黑
+                    draw(snake.pop(), "black")};
             }
             setTimeout(arguments.callee, 88);
         }();
