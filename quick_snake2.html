@@ -19,7 +19,6 @@
 </head>
 
 <body>
-
     <canvas id="can" width="400" height="400" style="background-color: black;">对不起，您的浏览器不支持canvas</canvas>
     <script>
         var snake = [41, 40], //snake队列表示蛇身，初始节点存在但不显示
@@ -57,9 +56,12 @@
                 draw(food, "yellow");
                 nm += 1
             } else { //没有吃到食物时正常移动，蛇尾出队列
-                if (snake.indexOf(snake[-1]) = 1)
-                { //由于允许蛇头经过蛇身，为避免把身体涂黑
-                    draw(snake.pop(), "black")};
+             //由于允许蛇头经过蛇身，为避免把身体涂黑
+                if (snake.indexOf(tempory) == -1) {
+                    draw(tempory, "black")
+                } else {
+                    snake.push(tempory)
+                }
             }
             setTimeout(arguments.callee, 88);
         }();
