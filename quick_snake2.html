@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
     <title>快蛇</title>
@@ -31,7 +30,6 @@
         function randint(x, y) {
             return parseInt(Math.random() * (x - y + 1) + y);
         }
-
         function draw(seat, color) {
             box.fillStyle = color;
             box.fillRect(seat % 20 * 20 + 1, ~~(seat / 20) * 20 + 1, 18, 18);
