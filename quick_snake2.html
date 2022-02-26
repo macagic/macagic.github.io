@@ -55,8 +55,8 @@
                 while (snake.indexOf(food = randint(20, 380)) > 0);
                 draw(food, "yellow");
                 nm += 1
-            } else { //没有吃到食物时正常移动，蛇尾出队列
-             //由于允许蛇头经过蛇身，为避免把身体涂黑
+            } else { //没吃食物正常移动，蛇尾出队列 //为避免把身体涂黑
+                var tempory = snake.pop()
                 if (snake.indexOf(tempory) == -1) {
                     draw(tempory, "black")
                 } else {
