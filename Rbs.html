@@ -104,14 +104,12 @@
     <script type="text/javascript">
         var wrap = document.getElementById('wrap');
         var tar = document.getElementById('tar'); //食物定位
+        function randint(x, y) {
+            return parseInt(Math.random() * (x - y + 1) + y);
+        }
         function food() {
-            var a, b;
-            a = Math.random() * 460;
-            a = Math.floor(a / 20) * 20 + 20;
-            b = Math.random() * 460;
-            b = Math.floor(b / 20) * 20 + 20;
-            tar.style.left = a + "px";
-            tar.style.top = b + "px";
+            tar.style.left = randint(1, 25) * 20 + "px";
+            tar.style.top = randint(1, 25) * 20 + "px";
         }
         food();
         var s = document.getElementsByClassName('num'); //定位蛇的位置
