@@ -1,0 +1,123 @@
+<html>
+
+<head>
+    <title>
+        蛇
+    </title>
+    <style type="text/css">
+        body {
+            background-image: url('3.jpg');
+        }
+        
+        #wrap {
+            width: 650px;
+            height: 550px;
+            margin: 0 auto;
+            position: absolute;
+            border: 2px solid #35008b;
+        }
+        
+        #tar {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            background-color: red;
+        }
+        
+        .num {
+            width: 20px;
+            height: 20px;
+            background-image: url('3.jpg');
+            border: 1px solid blue;
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        input {
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+            position: absolute;
+            display: block;
+            width: 60px;
+            height: 35px;
+        }
+        
+        #btn2 {
+            top: 45px;
+            left: 0px;
+        }
+        
+        #btn4 {
+            top: 90px;
+            left: 70px;
+        }
+        
+        #btn1 {
+            top: 45px;
+            left: 140px;
+        }
+        
+        #btn3 {
+            top: 0px;
+            left: 70px;
+        }
+        
+        #btn {
+            position: absolute;
+            width: 200px;
+            height: 125px;
+        }
+        
+        #txt {
+            width: 80px;
+            height: 55px;
+            position: absolute;
+            left: 60px;
+            top: 35px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 55px;
+            text-align: center;
+            cursor: move;
+        }
+    </style>
+</head>
+  <body>
+    <div id="btn" style="left:620px;top:600px">
+        <input type="button" value="→" id="btn1" />
+        <input type="button" value="←" id="btn2" />
+        <input type="button" value="↑" id="btn3" />
+        <input type="button" value="↓" id="btn4" />
+        <div id="txt">点此拖动</div>
+    </div>
+    <div id="wrap" style="left:400px;top: 30px ;">
+        <div id="tar"></div>
+        <div class="num"></div>
+        <div class="num"></div>
+        <div class="num"></div>
+        <div class="num"></div>
+        <div class="num"></div>
+    </div>
+    <script type="text/javascript">
+        var wrap = document.getElementById('wrap');
+        var tar = document.getElementById('tar'); //食物定位
+        function randint(x, y) {
+            return parseInt(Math.random() * (x - y + 1) + y);
+        }
+
+        function food() {
+            tar.style.left = randint(1, 25) * 20 + "px";
+            tar.style.top = randint(1, 25) * 20 + "px";
+        }
+        food();
+        var s = document.getElementsByClassName('num'); //定位蛇的位置
+        s[0].style.backgroundColor = "#3EFF1A";
+        var x = 300,
+            y = 400,
+            f, d, p, Fraction = 0;
+        for (var k = 0; k < s.length; k++) {
+            s[k].style.left = x + "px";
+            s[k].style.top = y + 20 * k + "px";
+        }
