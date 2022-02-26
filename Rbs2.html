@@ -121,3 +121,164 @@
             s[k].style.left = x + "px";
             s[k].style.top = y + 20 * k + "px";
         }
+ function game_over() {
+            alert("GAME OVER！" + "你的分数为：" + Fraction + "分");
+            food();
+            x = 300;
+            y = 400;
+            for (var k = 0; k < 5; k++) {
+                s[k].style.left = x + "px";
+                s[k].style.top = y + 20 * k + "px";
+            }
+            for (var kk = s.length - 1; kk > 4; kk--) {
+                s[kk].parentNode.removeChild(s[kk]);
+            }
+            return false;
+        }
+        function move(direction) //控制移动函数开始
+        {
+            clearTimeout(d);
+            s = document.getElementsByClassName('num');
+            var l = new Array();
+            l[0] = s[0].style.left;
+            var w = new Array();
+            w[0] = s[0].style.top;
+            s[0].style.left = x + "px";
+            s[0].style.top = y + "px";
+            for (var k1 = 1; k1 < s.length; k1++) {
+                l[k1] = s[k1].style.left;
+                w[k1] = s[k1].style.top;
+                s[k1].style.left = l[k1 - 1];
+                s[k1].style.top = w[k1 - 1];
+            }
+            if (parseInt(s[0].style.left) == parseInt(tar.style.left) && parseInt(s[0].style.top) == parseInt(tar.style.top)) {
+                var new_div = document.createElement('div');
+                new_div.className = "num";
+                Fraction += 100;
+                // emmm,js没in的用法
+                var lst = [20, -20, -20, 20];
+                if (p == 1 || p == 2) {
+                    new_div.style.top = s[0].style.top;
+                    new_div.style.left = (parseInt(s[0].style.left) + lst[p - 1]) + "px";
+                } else if (p == 3 || p == 4) {
+                    new_div.style.left = s[0].style.left;
+                    new_div.style.top = (parseInt(s[0].style.top) + lst[p - 1]) + "px";
+                }
+                s[0].parentNode.insertBefore(new_div, s[0]);
+                food();
+                s[0].style.backgroundColor = "#3EFF1A";
+                for (var k = 1; k < s.length; k++) {
+                    s[k].style.backgroundColor = "#FDFF68";
+                }
+            }
+            if (parseInt(s[0].style.left) < 0 || parseInt(s[0].style.left) >= 500 || parseInt(s[0].style.top) < 0 || parseInt(s[0].style.top) >= 500) {
+                game_over()
+            }
+            for (k = 1; k < s.length; k++) {
+                if (parseInt(s[0].style.left) == parseInt(s[k].style.left) && parseInt(s[0].style.top) == parseInt(s[k].style.top)) {
+                    game_over()
+                }
+            }
+            d = setTimeout(direction, 100);
+        }
+        function R() //绑定鼠标点击事件
+        {
+            x = parseInt(s[0].style.left);
+            y = parseInt(s[0].style.top);
+            if (parseInt(s[0].style.left) < parseInt(s[1].style.left)) return false;
+            p = 1;
+            x += 20,
+                move(R);
+        }
+
+        function L() {
+            x = parseInt(s[0].style.left);
+            y = parseInt(s[0].style.top);
+            if (parseInt(s[0].style.left) > parseInt(s[1].style.left)) return false;
+            p = 2;
+            x -= 20,
+                move(L);
+        }
+
+        function T() {
+            x = parseInt(s[0].style.left);
+            y = parseInt(s[0].style.top);
+            if (parseInt(s[0].style.top) > parseInt(s[1].style.top)) return false;
+            p = 3;
+            y -= 20,
+                move(T);
+        }
+
+        function B() {
+            x = parseInt(s[0].style.left);
+            y = parseInt(s[0].style.top);
+            if (parseInt(s[0].style.top) < parseInt(s[1].style.top)) return false;
+            p = 4;
+            y += 20;
+            move(B);
+        }
+        document.getElementById('btn1').onclick = function() {
+            R()
+        }
+        document.getElementById('btn2').onclick = function() {
+            L()
+        }
+        document.getElementById('btn3').onclick = function() {
+            T()
+        }
+        document.getElementById('btn4').onclick = function() {
+            B()
+        }
+        document.onkeydown = function(event) //绑定键盘事件
+            {
+                var e = event || window.event;
+                if (e && e.keyCode == 39) {
+                    R();
+                    return false;
+                }
+                if (e && e.keyCode == 37) {
+                    L();
+                    return false;
+                }
+                if (e && e.keyCode == 38) {
+                    T();
+                    return false;
+                }
+                if (e && e.keyCode == 40) {
+                    B();
+                    return false;
+                }
+            }
+        var btn = document.getElementById('btn');
+        var btn_l, btn_t;
+
+        function btn_move() {
+            btn_l = clientX - parseInt(wrap.style.left)
+        }
+        confirm("可用键盘的上下左右四个按键进行游戏操作！")
+        var btn = document.getElementById('btn'); //开始制作操作区拖动效果
+        var txt = document.getElementById('txt');
+        var new_x, new_y, bool = false;
+        txt.onmousedown = function() {
+            var eve = event || window.event;
+            bool = true;
+            new_x = eve.clientX - parseInt(btn.style.left);
+            new_y = eve.clientY - parseInt(btn.style.top);
+        }
+        btn.onmousemove = function btn_move(event) {
+            if (bool) {
+                var e = event || window.event;
+                btn.style.left = e.clientX - new_x;
+                btn.style.top = e.clientY - new_y;
+                if (parseInt(btn.style.left) < 520) btn.style.left = "520px";
+                if (parseInt(btn.style.top) < 0) btn.style.top = "0px";
+                if (parseInt(btn.style.top) > 395) btn.style.top = "395px";
+            }
+        }
+        document.body.onmouseup = function() {
+            bool = false;
+        }
+    </script>
+</body>
+
+</html>
