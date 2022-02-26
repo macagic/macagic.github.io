@@ -270,9 +270,6 @@
                 var e = event || window.event;
                 btn.style.left = e.clientX - new_x;
                 btn.style.top = e.clientY - new_y;
-                if (parseInt(btn.style.left) < 520) btn.style.left = "520px";
-                if (parseInt(btn.style.top) < 0) btn.style.top = "0px";
-                if (parseInt(btn.style.top) > 395) btn.style.top = "395px";
             }
         }
         document.body.onmouseup = function() {
