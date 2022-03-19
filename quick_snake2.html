@@ -47,8 +47,21 @@
                     "opacityOnHover": 0.2
                 }
             });
+            //参数n为休眠时间，单位为毫秒:
+            function sleep(n) {
+                var start = new Date().getTime();
+                //  console.log('休眠前：' + start);
+                while (true) {
+                    if (new Date().getTime() - start > n) {
+                        break;
+                    }
+                }
+            }
+            sleep(1500);
+            //  1.5秒
         </script>
     </div>
+
     <canvas id="can" width="400" height="400" style="background-color: black;"></canvas>
     <script>
         var snake = [48, 47, 46, 45, 44, 43, 42, 41, 40],
