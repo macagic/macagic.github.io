@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rose making and sharing</title>
-
 </head>
-
+    
 <body style="margin-left:200px">
     <div style="text-align: center">
         <canvas id="c"></canvas>
@@ -18,7 +17,6 @@
         var canvas = document.getElementsByTagName('canvas')[0];　　
         var context = canvas.getContext('2d');
 
-        　　
         var a = context;　　
         var b = document.body;　　
         var c = canvas;
@@ -61,8 +59,8 @@
                         g: o / 1e3 + .7 - o * w * 3e-6　　　　　　　　　　
                     };　　　　　　　　
                 }
-
-                　　　　　　　　
+                
+                
                 if (c > 32) {　　　　　　　　　　
                     c = c * 1.16 - .15;　　　　　　　　　　
                     var o = a * 45 - 20;　　　　　　　　　　
@@ -90,10 +88,7 @@
                 };　　　　　　　　
             }　　　　　　
         }
-
-
-
-        　　　　　　
+    　　　　　　
         setInterval(function() {　　　　　　　　
             for (var i = 0; i < 10000; i++) {　　　　　　　　　　　　
                 var part = i % 46;　　　　　　　　　　　　
@@ -116,7 +111,5 @@
             }　　　　　　　　
         }, 0);
     </script>
-
 </body>
-
 </html>
