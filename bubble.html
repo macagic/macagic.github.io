@@ -21,6 +21,12 @@
         <div class="bubble"></div>
         <div class="bubble"></div>
     </div>
+    <!-- 鼠标星星    这里是故意把这个放在鼠标图标前的，否则星星在图标前emm就是由于图标，所以前面不太好看 -->
+    <canvas id="canvas"></canvas>
+    <script src="star.js"></script>
+    <!-- End 鼠标星星 -->
+
+    <!-- 鼠标图标 -->
     <img class="mouse" src="my.ico" alt="">
     <script>
         var mouse = document.querySelector('.mouse');
@@ -29,6 +35,8 @@
             mouse.style.top = event.clientY - mouse.offsetHeight / 2 + 'px';
         })
     </script>
+    <!-- End 鼠标图标 -->
+
 </body>
 
 </html>
