@@ -1,0 +1,52 @@
+.black_tape,
+.black_tape rt {
+    background-color: #252525
+}
+
+span.black_tape a.external,
+span.black_tape a.external:visited,
+span.black_tape a.extiw,
+span.black_tape a.extiw:visited {
+    color: #252525
+}
+
+.black_tape,
+.black_tape a,
+a .black_tape,
+.black_tape a.new {
+    color: #252525;
+    text-shadow: none
+}
+
+body:not(.black_tape_toggle_on) .black_tape:hover,
+body:not(.black_tape_toggle_on) .black_tape:active,
+body:not(.black_tape_toggle_on) .black_tape.off {
+    transition: color .13s linear;
+    color: white
+}
+
+body:not(.black_tape_toggle_on) .black_tape:hover a,
+body:not(.black_tape_toggle_on) a:hover .black_tape,
+body:not(.black_tape_toggle_on) .black_tape.off a,
+body:not(.black_tape_toggle_on) a:hover .black_tape.off {
+    transition: color .13s linear;
+    color: lightblue
+}
+
+body:not(.black_tape_toggle_on) .black_tape.off .new,
+body:not(.black_tape_toggle_on) .black_tape.off .new:hover,
+body:not(.black_tape_toggle_on) .new:hover .black_tape.off,
+body:not(.black_tape_toggle_on) .black_tape:hover .new {
+    transition: color .13s linear;
+    color: #FCC
+}
+
+h1 {
+    font-weight: 700;
+    border-bottom: 2px solid #0074f9
+}
+
+h2 {
+    font-weight: 700;
+    border-bottom: 1px solid #0074f9
+}
