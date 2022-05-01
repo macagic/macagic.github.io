@@ -23,7 +23,7 @@ $(function() {
     var musicImgsData = ['img/my.ico', 'img/xue.jpg'] // 图片地址数组
     var musicNameData = ['Dream it possible', "say something"]; // 歌曲名数组
     var artistNameData = ['weizi', 'weizi'] // 创作歌手数组
-    var musicUrls = ['mp3/d.mp3', 'https://gitcode.net/m0_61979183/ye/-/raw/master/say.m4a?']; // 歌曲mp3数组
+    var musicUrls = ['https://gitcode.net/m0_61979183/ye/-/raw/master/dream_it_possible.m4a?', 'https://gitcode.net/m0_61979183/ye/-/raw/master/say.m4a?']; // 歌曲mp3数组
     var currIndex = -1; // 当前播放索引
 
     var buffInterval = null // 初始化定时器 判断是否需要缓冲
