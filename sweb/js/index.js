@@ -20,10 +20,12 @@ $(function() {
 
     // 一些计算所需的变量
     var seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0
-    var musicImgsData = ['img/my.ico', 'img/xue.jpg'] // 图片地址数组
-    var musicNameData = ['Dream it possible', "say something"]; // 歌曲名数组
-    var artistNameData = ['weizi', 'weizi'] // 创作歌手数组
-    var musicUrls = ['https://gitcode.net/m0_61979183/ye/-/raw/master/dream_it_possible.m4a?', 'https://gitcode.net/m0_61979183/ye/-/raw/master/say.m4a?']; // 歌曲mp3数组
+    var musicImgsData = ['https://gitcode.net/m0_61979183/ye/-/raw/master/my.ico?', 'http://p2.music.126.net/QA3_gxKjsFOQyoIo-PgX-g==/109951165969263086.jpg?param=130y130', 'http://p2.music.126.net/a6MZZzTaPiRRr6fwBqe1Nw==/109951163096733168.jpg?param=130y130'] // 图片地址数组
+    var musicNameData = ['Dream it possible', "say something", 'Forever young']; // 歌曲名数组
+    var artistNameData = ['xxx', 'weizi', 'emm'] // 创作歌手数组
+        // emmm,那个问题，就是除第一首外的后几首无法点进度播放，和代码应该没关系，如果是本地音乐，完全可以实现
+        // 实在不行，后期换换仓库之类的
+    var musicUrls = ['https://gitcode.net/m0_61979183/ye/-/raw/master/dream_it_possible.m4a', 'https://gitcode.net/m0_61979183/ye/-/raw/master/say.m4a?', 'https://gitcode.net/m0_61979183/ye/-/raw/master/young.mp3?']; // 歌曲mp3数组
     var currIndex = -1; // 当前播放索引
 
     var buffInterval = null // 初始化定时器 判断是否需要缓冲
@@ -186,10 +188,10 @@ $(function() {
         }
 
         if (flag == 0) {
-            playPauseBtn.attr('class', 'btn play-pause icon-jiediankaishi iconfont'); // 显示播放图标
+            //     playPauseBtn.attr('class', 'btn play-pause icon-jiediankaishi iconfont'); // 显示播放图标
         } else {
             musicImgs.removeClass('buffering');
-            playPauseBtn.attr('class', 'btn play-pause icon-zanting iconfont') // 显示暂停图标
+            //     playPauseBtn.attr('class', 'btn play-pause icon-zanting iconfont') // 显示暂停图标
         }
 
         seekBar.width(0); // 重置播放进度条为0
@@ -225,8 +227,8 @@ $(function() {
     }
 
 
-    // 初始化函数
-    function initPlayer() {
+    // 初始化函数  也是主函数 initplayer
+    ! function() {
         audio = new Audio(); // 创建Audio对象
         selectTrack(0); // 初始化第一首歌曲的相关信息
         audio.loop = false; // 取消歌曲的循环播放功能
@@ -238,15 +240,13 @@ $(function() {
         sArea.mouseout(hideHover);
         sArea.on('click', playFromClickedPos);
 
+
         // 实时更新播放时间
         $(audio).on('timeupdate', updateCurrTime);
 
         // 上下首切换
         playPrevBtn.on('click', function() { selectTrack(-1); });
         playNextBtn.on('click', function() { selectTrack(1); });
-    }
-
-    // 调用初始化函数
-    initPlayer();
+    }();
 
 });

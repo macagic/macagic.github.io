@@ -8,14 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的练习笔记</title>
-    <link rel="stylesheet" href="bubble.css">
     <link rel="shortcut icon" href="my.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/bubble.css">
     <link rel="stylesheet" href="css/style.css">
 
 
     <!-- 鼠标星星    这里是故意把这个放在鼠标图标前的，emm就是星星在图标前面不太好看 -->
     <canvas id="canvas"></canvas>
-    <script src="star.js"></script>
     <!-- End 鼠标星星 -->
 
     <!-- 鼠标图标 -->
@@ -24,7 +23,7 @@
     <!--  End 鼠标图标 -->
 
     <!-- 雾化字 -->
-    <link rel="stylesheet" href="fog.css">
+    <link rel="stylesheet" href="css/fog.css">
 
 
 </head>
@@ -32,7 +31,7 @@
 <body id="main">
 
 
-    <script src="snow.js"></script>
+    <script src="css/snow.js"></script>
 
     <div class='box'>
         <a href='https://macagic.github.io/Rbs.html'>蛇2</a>
@@ -42,7 +41,7 @@
         <a href='https://macagic.github.io/bubble.html'>海泡泡</a>
         <a href='https://macagic.github.io/miao.html'>白喵</a>
         <a href='https://macagic.github.io/recorder.html'>录音机</a>
-        <a href='https://macagic.github.io/macakit/HTML/index.html'>megakit</a>
+        <a href='HTML/index.html'>进入主页</a>
         <a href='https://macagic.github.io/https://bingye1.coding.net/p/ye/d/ye/git/raw/master/Macagic_1.0.apk'>app</a>
 
         <!-- <h2 class="txt">(●'◡'●)来首音乐？</h2> -->
@@ -77,6 +76,8 @@
             </table>
         </form>
         <!--End 此为插入了一个百度搜索框 -->
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次. 您是第
+        <span id="busuanzi_value_site_uv"></span>个小伙伴
     </div>
 
     <!-- 这样也可以，没必要非br换一行 -->
@@ -144,32 +145,17 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/index.js"></script>
 
-
-
-    <script>
-        var txt = document.querySelector(".text");
-        txt.innerHTML = txt.textContent.replace(/\S/g, "<span>$&</span>");
-
-        var arr = document.querySelectorAll("span");
-        arr.forEach(function(temp) {
-            temp.addEventListener('mouseover', () => {
-                temp.classList.add('move');
-            })
-        })
-    </script>
-
-
+    <script src="js/star.js"></script>
+    <script src="js/fog.js"></script>
 
     <!-- //ye -->
     <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
-    <script src="live.js"></script>
+    <script src="js/live.js"></script>
 
 
-    本站总访问量<span id="busuanzi_value_site_pv"></span>次. 您是第
-    <span id="busuanzi_value_site_uv"></span>个小伙伴
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-    </script>
+
 </body>
 
 </html>
