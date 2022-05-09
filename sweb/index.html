@@ -42,17 +42,17 @@
         <a href='https://macagic.github.io/bubble.html'>海泡泡</a>
         <a href='https://macagic.github.io/miao.html'>白喵</a>
         <a href='https://macagic.github.io/recorder.html'>录音机</a>
-        <a href='https://macagic.github.io/megakit/HTML/index.html'>megakit</a>
+        <a href='https://macagic.github.io/macakit/HTML/index.html'>megakit</a>
         <a href='https://macagic.github.io/https://bingye1.coding.net/p/ye/d/ye/git/raw/master/Macagic_1.0.apk'>app</a>
-        <div id='music'>
-            <h2 class="txt">(●'◡'●)来首音乐？</h2>
-            <!-- txt txt2 注释掉了 -->
-            <!-- <h2 class="txt"></h2> -->
-            <!-- <h2 class="txt2"></h2> -->
-            <!-- <h2 class="txt3"></h2> -->
-            <!-- <h1 class="txt3">000000000000</h1> -->
-            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=526472519&auto=0&height=66"></iframe>
-        </div>
+
+        <!-- <h2 class="txt">(●'◡'●)来首音乐？</h2> -->
+        <p class="text">
+            《一个青年艺术家的画像》中的主人公斯蒂芬·迪达勒斯很大程度上象征着乔伊斯自己。 所有作品中，《一个青年艺术家的画像》作为乔伊斯自传性的小说以其独特和高超的 艺术手法而受人推崇。小说中的很多细节取材于乔伊斯的早期生活，主人公斯蒂芬· 迪达勒斯与乔伊斯的早年经历一样，在孤独中成长， 最终走向献身艺术的征程。孤 独，作为伟人和天才的通病，却恰是艺术家成功的基石。“孤独是本真的心灵存在， 这是真正艺术生活的根本条件”。
+        </p>
+        <!-- txt txt2 注释掉了 -->
+        <!-- <h2 class="txt"></h2> -->
+        <!-- <h2 class="txt2"></h2> -->
+        <!-- <h2 class="txt3"></h2> -->
         <a href='https://macagic.github.io/test.html'>你想看天气之子吗？</a>
 
         <div class='words_box' style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
@@ -145,9 +145,7 @@
     <script src="js/index.js"></script>
 
 
-    <p class="text">
-        《一个青年艺术家的画像》中的主人公斯蒂芬·迪达勒斯很大程度上象征着乔伊斯自己。 所有作品中，《一个青年艺术家的画像》作为乔伊斯自传性的小说以其独特和高超的艺术手法而受人推崇。 小说中的很多细节取材于乔伊斯的早期生活，主人公斯蒂芬·迪达勒斯与乔伊斯的早年经历一样，在孤独中成长， 最终走向献身艺术的征程。孤独，作为伟人和天才的通病，却恰是艺术家成功的基石。“孤独是本真的心灵存在， 这是真正艺术生活的根本条件”。
-    </p>
+
     <script>
         var txt = document.querySelector(".text");
         txt.innerHTML = txt.textContent.replace(/\S/g, "<span>$&</span>");
@@ -156,7 +154,6 @@
         arr.forEach(function(temp) {
             temp.addEventListener('mouseover', () => {
                 temp.classList.add('move');
-                console.log('666');
             })
         })
     </script>
@@ -166,6 +163,13 @@
     <!-- //ye -->
     <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
     <script src="live.js"></script>
+
+
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次. 您是第
+    <span id="busuanzi_value_site_uv"></span>个小伙伴
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    </script>
 </body>
 
 </html>
