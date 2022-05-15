@@ -31,5 +31,5 @@ setInterval(function() {
         main.append(snow) //把创建好的div放进main容器中
         let scene = new Scene() //创建Scene对象
         scene.draw(snow) //执行Scene对象的draw方法
-    }, 400)
+    }, 450)
     // 500
