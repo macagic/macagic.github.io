@@ -34,11 +34,39 @@
         .words_box {
             background-image: url('https://img0.baidu.com/it/u=255820472,3712711141&fm=253&fmt=auto&app=138&f=GIF?w=1000&h=200');
         }
+        .bear {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            background: url('https://gitcode.net/m0_61979183/ye/-/raw/master/bear.png?') no-repeat;
+            /* 我们元素可以添加多个动画， 用逗号分隔 */
+            animation: bear .4s steps(8) infinite, move 3s forwards;
+        }
+        
+        @keyframes bear {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -1600px 0;
+            }
+        }
+        
+        @keyframes move {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
     </style>
     <link rel="shortcut icon" href="ta.ico" type="image/x-icon">
 </head>
 
 <body>
+    <div class="bear"></div>
     <div class='box'>
         <h1 id='live'>你好 (一级标签) 6个，到h6，大小依次减小</h1>
         <a href="Rbs.html">贪吃蛇 1</a>
