@@ -20,7 +20,7 @@ $(function() {
 
     // 一些计算所需的变量
     var seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0
-    var musicImgsData = ['https://gitcode.net/m0_61979183/ye/-/raw/master/my.ico?', 'http://p2.music.126.net/QA3_gxKjsFOQyoIo-PgX-g==/109951165969263086.jpg?param=130y130','http://p1.music.126.net/9LeLbfh_LPiZmKPSx06YQA==/109951166713464745.jpg?param=130y130', 'http://p2.music.126.net/a6MZZzTaPiRRr6fwBqe1Nw==/109951163096733168.jpg?param=130y130','http://p1.music.126.net/lJiOlEt-Ti7lONVSjy8JnA==/18284878370355475.jpg?param=130y130'] // 图片地址数组
+    var musicImgsData = ['https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/my.ico', 'http://p2.music.126.net/QA3_gxKjsFOQyoIo-PgX-g==/109951165969263086.jpg?param=130y130','http://p1.music.126.net/9LeLbfh_LPiZmKPSx06YQA==/109951166713464745.jpg?param=130y130', 'http://p2.music.126.net/a6MZZzTaPiRRr6fwBqe1Nw==/109951163096733168.jpg?param=130y130','http://p1.music.126.net/lJiOlEt-Ti7lONVSjy8JnA==/18284878370355475.jpg?param=130y130'] // 图片地址数组
     var musicNameData = ['Dream it possible', "say something",'明天会更好', 'Forever young','深呼吸的时候']; // 歌曲名数组
     var artistNameData = ['xxx', 'weizi', '李如意','emm','布偶乐队'] // 创作歌手数组
         // emmm,那个问题，就是除第一首外的后几首无法点进度播放，和代码应该没关系，如果是本地音乐，完全可以实现
