@@ -1,7 +1,8 @@
 @font-face {
     font-family: "iconfont";
     /* Project id  */
-    src: url('iconfont.ttf?t=1657333489335') format('truetype');
+    src: url('https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/Tweb/css/iconfont.ttf') format('truetype');
+/*     src: url('iconfont.ttf?t=1657333489335') format('truetype'); */
 }
 
 .iconfont {
