@@ -1,0 +1,142 @@
+<!-- # macagic-github.io -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--来自后期对初始页面修改 进行分页‘简化 ’-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的练习笔记</title>
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/my.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/css/bubble.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/css/style.css">
+
+    <!-- 鼠标星星    这里是故意把这个放在鼠标图标前的，emm就是星星在图标前面不太好看 -->
+    <canvas id="canvas"></canvas>
+    <!-- End 鼠标星星 -->
+
+    <!-- 鼠标图标 -->
+    <img class="mouse" src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/my.ico">
+    <!-- 其script 在star里-->
+    <!--  End 鼠标图标 -->
+
+    <!-- 雾化字 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/css/fog.css">
+
+
+</head>
+
+<body id="main">
+
+
+    <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/js/snow.js"></script>
+
+    <div class='box'>
+        <!-- <p class="text">每一个星球都有一个驱动核心，</p>
+        <p class="text">每一种思想都有影响力的种子。</p>
+        <p class="text">感受世界的温度，</p>
+        <p class="text">年轻的你也能成为改变世界的动力，</p>
+        <p class="text">你的潜力，是改变世界的动力！</p> -->
+        <p class="text">每一个星球都有一个驱动核心，<br>每一种思想都有影响力的种子。<br>感受世界的温度，<br>年轻的你也能成为改变世界的动力，<br>你的潜力，是改变世界的动力！</p>
+        <!-- txt txt2 注释掉了 -->
+        <!-- <h2 class="txt"></h2> -->
+        <!-- <h2 class="txt2"></h2> -->
+        <h2 class="txt3"></h2>
+        <br>
+
+
+        <!-- 此为插入了一个百度搜索框 -->
+        <form target="_blank" method="get" action="http://www.baidu.com/s">
+            <table>
+                <tr>
+                    <td>
+                        <a href="http://www.baidu.com">
+                        </a>
+                    </td>
+                    <td><br/><input type="text" id="search1" name="word" /></td>
+                    <td><br/><input type="submit" value="搜索" /></td>
+                </tr>
+            </table>
+        </form>
+        <!--End 此为插入了一个百度搜索框 -->
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <!-- 本站总访问量<span id="busuanzi_value_site_pv"></span>次. 您是第
+        <span id="busuanzi_value_site_uv"></span>个小伙伴 -->
+    </div>
+
+
+    <div class="kuang">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <div id="player">
+        <!-- 歌曲信息模块 -->
+        <div id="player-content1">
+            <!-- 歌曲名 -->
+            <div class="music-name"></div>
+            <!-- 歌手名 -->
+            <div class="artist-name"></div>
+            <!-- 歌曲时间 -->
+            <div class="time">
+                <!-- 当前播放的时间 -->
+                <div class="current-time"></div>
+                <!-- 歌曲总时长 -->
+                <div class="total-time"></div>
+            </div>
+            <!-- 进度条 -->
+            <div id="s-area">
+                <!-- 鼠标移动到进度条上，显示的时间信息 -->
+                <div id="ins-time"></div>
+                <!-- 鼠标移动到进度条上，进度条变暗部分-->
+                <div id="s-hover"></div>
+                <!-- 表示当前歌曲播放进度的蓝色进度条 -->
+                <div id="seek-bar"></div>
+            </div>
+        </div>
+
+        <!-- 控制模块 -->
+        <div id="player-content2">
+            <!-- 左侧歌曲封面旋转模块 -->
+            <div class="music-imgs">
+                <!-- 封面图 -->
+                <div class="img"></div>
+                <!-- 歌曲缓冲时的提示文字 -->
+                <div id="buffer-box">缓冲…</div>
+            </div>
+            <!-- 右侧歌曲操作模块 -->
+            <div class="player-controls">
+                <!-- 上一首按钮 &#xe603; -->
+                <div class="btn prev iconfont">◀</div>
+                <!-- 暂停/播放 按钮 -->
+                <div class="btn play-pause icon-jiediankaishi iconfont">⚪ ‍</div>
+                <!-- 下一首按钮 -->
+                <div class="btn next iconfont">&nbsp;▶</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/js/index.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/js/star.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/js/fog.js"></script>
+
+    <!-- //ye -->
+    <!-- <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script> -->
+    <!-- <script src="js/live.js"></script> -->
+
+
+
+
+</body>
+
+</html>
