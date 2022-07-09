@@ -1,25 +1,21 @@
 @font-face {
-  font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1651311489948') format('truetype');
+    font-family: "iconfont";
+    /* Project id  */
+    src: url('iconfont.ttf?t=1657333489335') format('truetype');
 }
 
 .iconfont {
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: "iconfont" !important;
+    font-size: 22px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-Playerpause:before {
-  content: "\e6aa";
+.icon-shuaxin:before {
+    content: "\f015c";
 }
 
-.icon-Playerplay:before {
-  content: "\e6ab";
+.icon-wenzi:before {
+    content: "\e62d";
 }
-
-.icon-Playernext:before {
-  content: "\e6ac";
-}
-
