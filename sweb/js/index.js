@@ -20,12 +20,13 @@ $(function() {
 
     // 一些计算所需的变量
     var seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0
-    var musicImgsData = ['https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/my.ico', 'http://p2.music.126.net/QA3_gxKjsFOQyoIo-PgX-g==/109951165969263086.jpg?param=130y130','http://p1.music.126.net/9LeLbfh_LPiZmKPSx06YQA==/109951166713464745.jpg?param=130y130', 'http://p2.music.126.net/a6MZZzTaPiRRr6fwBqe1Nw==/109951163096733168.jpg?param=130y130','http://p1.music.126.net/lJiOlEt-Ti7lONVSjy8JnA==/18284878370355475.jpg?param=130y130'] // 图片地址数组
-    var musicNameData = ['Dream it possible', "say something",'明天会更好', 'Forever young','深呼吸的时候']; // 歌曲名数组
-    var artistNameData = ['xxx', 'weizi', '李如意','emm','布偶乐队'] // 创作歌手数组
+    var musicImgsData = ['Gfq_eVuq7lgilBf0w1g5dg==/109951163088676710', 'QA3_gxKjsFOQyoIo-PgX-g==/109951165969263086','9LeLbfh_LPiZmKPSx06YQA==/109951166713464745', 'a6MZZzTaPiRRr6fwBqe1Nw==/109951163096733168','lJiOlEt-Ti7lONVSjy8JnA==/18284878370355475','C-tFf-NUVhQUR0sDPdkmJw==/109951167600111613'] // 图片地址数组
+//     var musicImgsData = ['https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/my.ico', 'http://p2.music.126.net/QA3_gxKjsFOQyoIo-PgX-g==/109951165969263086.jpg?param=130y130','http://p1.music.126.net/9LeLbfh_LPiZmKPSx06YQA==/109951166713464745.jpg?param=130y130', 'http://p2.music.126.net/a6MZZzTaPiRRr6fwBqe1Nw==/109951163096733168.jpg?param=130y130','http://p1.music.126.net/lJiOlEt-Ti7lONVSjy8JnA==/18284878370355475.jpg?param=130y130'] // 图片地址数组
+    var musicNameData = ['Dream it possible', "say something",'明天会更好', 'Forever young','深呼吸的时候','寂寞电台']; // 歌曲名数组
+    var artistNameData = ['xxx', 'weizi', '李如意','emm','布偶乐队',''] // 创作歌手数组
         // emmm,那个问题，就是除第一首外的后几首无法点进度播放，和代码应该没关系，如果是本地音乐，完全可以实现
         // 实在不行，后期换换仓库之类的
-    var musicUrls = ['dream_it_possible.m4a', 'say.m4a', '明天会更好.m4a','young.mp3','深呼吸的时候.m4a']; // 歌曲mp3数组
+    var musicUrls = ['dream_it_possible.m4a', 'say.m4a', '明天会更好.m4a','young.mp3','深呼吸的时候.m4a','寂寞电台.m4a']; // 歌曲mp3数组
     var currIndex = -1; // 当前播放索引
 
     var buffInterval = null // 初始化定时器 判断是否需要缓冲
@@ -202,7 +203,8 @@ $(function() {
         // 获取当前索引的:歌曲名，歌手名，图片，歌曲链接等信息
         currMusic = musicNameData[currIndex];
         currArtist = artistNameData[currIndex];
-        currImg = musicImgsData[currIndex];
+        currImg =('https://p1.music.126.net/' + musicImgsData[currIndex] + '.jpg?');
+//         currImg =('https://p1.music.126.net/' + musicImgsData[currIndex] + '.jpg?param=130y130');
         audio.src = ('https://gitcode.net/m0_61979183/ye/-/raw/master/' + musicUrls[currIndex]);
 
         nTime = 0;
