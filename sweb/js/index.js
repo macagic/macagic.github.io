@@ -203,8 +203,7 @@ $(function() {
         // 获取当前索引的:歌曲名，歌手名，图片，歌曲链接等信息
         currMusic = musicNameData[currIndex];
         currArtist = artistNameData[currIndex];
-        currImg =('https://p1.music.126.net/' + musicImgsData[currIndex] + '.jpg?');
-//         currImg =('https://p1.music.126.net/' + musicImgsData[currIndex] + '.jpg?param=130y130');
+        currImg =('https://p1.music.126.net/' + musicImgsData[currIndex] + '.jpg?param=120y120');
         audio.src = ('https://gitcode.net/m0_61979183/ye/-/raw/master/' + musicUrls[currIndex]);
 
         nTime = 0;
