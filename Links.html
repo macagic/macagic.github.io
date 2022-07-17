@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Links</title>
+    <link rel="shortcut icon" href="https://macagic.github.io/my.ico" type="image/x-icon">
+    <style>
+        html {
+            --google-blue-50: rgb(232, 240, 254);
+            --google-blue-300: rgb(138, 180, 248);
+            --google-blue-600: rgb(26, 115, 232);
+            --google-blue-900: rgb(23, 78, 166);
+            --google-grey-200: rgb(232, 234, 237);
+            --google-grey-800: rgb(78, 99, 114);
+            /* --google-grey-800: rgb(255, 255, 255); */
+            --google-grey-900: rgb(32, 33, 36);
+            --interactive-color: var(--google-blue-600);
+            --primary-color: var(--google-grey-900);
+            --product-background: var(--google-blue-50);
+            --product-text-color: var(--google-blue-900);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            html {
+                --interactive-color: var(--google-blue-300);
+                --primary-color: var(--google-grey-200);
+                --product-background: var(--google-grey-800);
+                --product-text-color: var(--google-grey-200);
+                /* background: var(--google-grey-900); */
+                background: white;
+            }
+        }
+        
+        body {
+            color: var(--primary-color);
+            font-size: 84%;
+            max-width: 1020px;
+            background-color: white;
+        }
+        
+        a {
+            color: var(--interactive-color);
+        }
+        
+        .page-title {
+            font-size: 164%;
+            font-weight: bold;
+        }
+        
+        .product {
+            background-color: var(--product-background);
+            color: var(--product-text-color);
+            border-radius: 5px;
+            margin-top: 16px;
+            overflow: auto;
+            padding: 2px;
+        }
+        
+        .product .title {
+            float: left;
+            font-size: 110%;
+            font-weight: bold;
+            margin: 3px;
+        }
+        
+        .product .homepage {
+            color: var(--interactive-color);
+            float: right;
+            margin: 3px;
+            text-align: right;
+        }
+        
+        .product .homepage::before {
+            content: " - ";
+        }
+        
+        .product .show {
+            color: var(--interactive-color);
+            float: right;
+            margin: 3px;
+            text-align: right;
+            text-decoration: underline;
+        }
+        
+        .licence {
+            border-radius: 3px;
+            clear: both;
+            display: none;
+            padding: 16px;
+        }
+        
+        .licence h3 {
+            margin-top: 0;
+        }
+        
+        .licence pre {
+            white-space: pre-wrap;
+        }
+        
+        .dialog #print-link,
+        .dialog .homepage {
+            display: none;
+        }
+        
+        input+label+div {
+            display: none;
+        }
+        
+        input+label::after {
+            content: "show details";
+            cursor: pointer;
+        }
+        
+        input:checked+label+div {
+            display: block;
+        }
+        
+        input:checked+label::after {
+            content: "hide details";
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="page-title" style="float:left;">目前并未加入友链，仅为个人开发链接 点击homepage进入游戏</span>
+    <div style="clear:both; overflow:auto;">
+        <div class="product">
+            <span class="title">贪吃蛇 1</span>
+            <span class="homepage"><a href="https://macagic.github.io/Rbs.html">Enter Link</a></span>
+            <input type="checkbox" hidden id="0">
+            <label class="show" for="0" tabindex="0"></label>
+            <div class="licence">
+                <pre>
+                    贪吃蛇 应该算是正式版吧
+                                </pre>
+            </div>
+        </div>
+
+        <div class="product">
+            <span class="title">贪吃蛇 2</span>
+            <span class="homepage"><a href="https://macagic.github.io/Rbs2.html">Enter Link</a></span>
+            <input type="checkbox" hidden id="1">
+            <label class="show" for="1" tabindex="0"></label>
+            <div class="licence">
+                <pre>
+                    蛇身魔幻了些
+                </pre>
+            </div>
+        </div>
+
+        <div class="product">
+            <span class="title">快蛇</span>
+            <span class="homepage"><a href="https://macagic.github.io/quick_snake2.html">Enter Link</a></span>
+            <input type="checkbox" hidden id="2">
+            <label class="show" for="2" tabindex="0"></label>
+            <div class="licence">
+                <pre>
+                    速度较快的贪吃蛇
+                </pre>
+            </div>
+        </div>
+
+        <div class="product">
+            <span class="title">一支玫瑰</span>
+            <span class="homepage"><a href="https://macagic.github.io/flower.html">Enter Link</a></span>
+            <input type="checkbox" hidden id="3">
+            <label class="show" for="3" tabindex="0"></label>
+            <div class="licence">
+                <pre>
+                    一朵花
+                </pre>
+            </div>
+        </div>
+
+        <div class="product">
+            <span class="title">海洋录音机</span>
+            <span class="homepage"><a href="https://macagic.github.io/recorder.html">Enter Link</a></span>
+            <input type="checkbox" hidden id="4">
+            <label class="show" for="4" tabindex="0"></label>
+            <div class="licence">
+                <pre>
+                    花里胡哨的录音机
+                </pre>
+            </div>
+        </div>
+
+        <div class="product">
+            <span class="title">白喵</span>
+            <span class="homepage"><a href="https://macagic.github.io/miao.html">Enter Link</a></span>
+            <input type="checkbox" hidden id="5">
+            <label class="show" for="5" tabindex="0"></label>
+            <div class="licence">
+                <pre>
+                    白色猫咪看板娘
+                </pre>
+            </div>
+        </div>
+
+        <div class="product">
+            <span class="title">app for android</span>
+            <span class="homepage"><a href="https://bingye1.coding.net/p/ye/d/ye/git/raw/master/Macagic.apk">Enter Link</a></span>
+            <input type="checkbox" hidden id="6">
+            <label class="show" for="6" tabindex="0"></label>
+            <div class="licence">
+                <pre>
+                    版本1.2.0
+                </pre>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/Tweb/js/蜘蛛网背景.js"></script>
+
+</html>
