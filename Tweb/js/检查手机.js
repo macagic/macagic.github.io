@@ -7,6 +7,7 @@
       //如果包含“Mobile”（是手机设备）则返回true
       //return isPhone;
       if (isPhone){
-        hide()
-      }
+//         hide();
+      document.getElementById("live2d-widget").style.display = "none";
+      };
   }
