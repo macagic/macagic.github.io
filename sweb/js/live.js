@@ -22,3 +22,10 @@ L2Dwidget.init({
         "opacityOnHover": 0.2
     }
 });
+function hide() {
+    document.getElementById("live2d-widget").style.display = "none";
+};
+
+function show() {
+    document.getElementById("live2d-widget").style.display = "";
+};
