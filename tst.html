@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+<!-- 
     <script src='https://v1.hitokoto.cn/?encode=js&select=%23hitokoto' defer></script>
     <div class="pio-container left">
         <div class="pio-action"></div><canvas id="pio" width="280" height="250"></canvas></div>
@@ -23,7 +23,18 @@
             "tips": true,
             "model": ["http://xchc.2005dai.cn/usr/plugins/Pio/models/pio/model.json"]
         });
+    </script> -->
+    
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'c1TrbCPJbJShGlFJ3X8KV1IY-gzGzoHsz',
+            appKey: 'NhEi2xaVVkFFSS16hfxJ1NnO'
+        })
     </script>
+
 </body>
 
 </html>
