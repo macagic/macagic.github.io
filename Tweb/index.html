@@ -110,6 +110,10 @@
 
     <div class="tou">
         <sapn class="logo">&nbsp;MACAGIC</sapn>
+        <span style="overflow: hidden;text-align:center;">
+            <span id="date" style="font-size: 2vh;font-weight: bold;color:black;">00月00日</span>&nbsp;&nbsp;&nbsp;
+            <span id="timer" style="font-size: 2vh;font-weight: bold;color:black">05:20</span>
+        </span>
         <ul class="biao">
             <li><a href="https://macagic.github.io/sweb/HTML/index.html">主页</a></li>
             <li><a href="https://macagic.github.io/sweb/PAGE/index.html">个人简介</a></li>
@@ -120,19 +124,20 @@
             <li><a href="https://macagic.github.io/Links.html">友链</a></li>
         </ul>
     </div>
-    <script>
-        window.addEventListener('scroll', function() {
-            let tou = document.querySelector('.tou');
+<script>
+    window.addEventListener('scroll', function() {
+        let tou = document.querySelector('.tou');
 
 
-            /*  tou.classList.toggle("bian",window.scrollY>0); */
-            if (window.scrollY > 0) {
-                tou.classList.add("bian");
-            } else {
-                tou.classList.remove("bian");
-            }
-        })
-    </script>
+        /*  tou.classList.toggle("bian",window.scrollY>0); */
+        if (window.scrollY > 0) {
+            tou.classList.add("bian");
+        } else {
+            tou.classList.remove("bian");
+        }
+    })
+</script>
+<script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/Tweb/js/clock.js"></script>
 </body>
 
 </html>
