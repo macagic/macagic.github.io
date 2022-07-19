@@ -59,6 +59,28 @@
                 transform: translateX(-50%);
             }
         }
+        .returnTop {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            position: fixed;
+            left: 0.75rem;
+            /* right: 0.75rem; */
+            bottom: 10%;
+            background: #03a9f4;
+            text-align: center;
+            line-height: 60px;
+        }
+        
+        .returnTop i {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        #btn {
+            display: none;
+        }
     </style>
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/ta.ico" type="image/x-icon">
 </head>
@@ -68,6 +90,47 @@
     <div id="hans-bolang"></div>
     <script src="https://api.vvhan.com/api/bolang"></script>
     <!--END 外源接口      -->
+   <div class="returnTop" id="btn">
+        <i class="aui-iconfont aui-icon-top">🚀</i>
+    </div>
+    <script>
+        // 返回顶部
+        var obtn = document.getElementById('btn');
+        var timer = null;
+        var isTop = true;
+        //获取页面的可视窗口高度
+        var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        //滚动条滚动时触发
+        window.onscroll = function() {
+            //在滚动的时候增加判断
+            var osTop = document.documentElement.scrollTop || document.body.scrollTop; //特别注意这句，忘了的话很容易出错
+            if (osTop == 0) {
+                obtn.style.display = 'none';
+            } else {
+                obtn.style.display = 'block';
+            }
+            if (!isTop) {
+                clearInterval(timer);
+            }
+            isTop = false;
+        };
+        btn.onclick = function() {
+            //设置定时器
+            timer = setInterval(function() {
+                //获取滚动条距离顶部的高度
+                var osTop = document.documentElement.scrollTop || document.body.scrollTop; //同时兼容了ie和Chrome浏览器
+                //减小的速度
+                var isSpeed = Math.floor(-osTop / 6);
+                document.documentElement.scrollTop = document.body.scrollTop = osTop + isSpeed;
+                //console.log( osTop + isSpeed);
+                isTop = true;
+                //判断，然后清除定时器
+                if (osTop == 0) {
+                    clearInterval(timer);
+                }
+            }, 30);
+        };
+    </script>
     <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/Tweb/js/樱花背景.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/Tweb/js/弹出爱心.js"></script>
     <div class='box'>
