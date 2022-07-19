@@ -21,6 +21,10 @@
                 <div id="cover">
                     <div id="text">
                         <!-- <span style="color: white;">POWERED</span> -->
+		       <div style="overflow: hidden;">
+                            <span id="date" style="font-size: 3vh;font-weight: bold;color: #000000;">00月00日</span>&nbsp;
+                            <span id="timer" style="font-size: 3vh;font-weight: bold;color: #000000;">06:06</span>
+                        </div>
                     </div>
                     <div id="detail"></div>
                     <div id="handle"></div>
@@ -47,7 +51,28 @@
     </form>
     <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/js/login.js"></script>
 
+    <script>
+        let showSymbl = true
 
+        function clock() {
+            let now = new Date()
+            let hour = now.getHours() + ''
+            let minute = now.getMinutes() + ''
+            let month = (now.getMonth() + 1) + ''
+            let day = now.getDate() + ''
+            if (showSymbl) {
+                document.getElementById('timer').innerHTML = `${hour.padStart(2, '0')}<span>:</span>${minute.padStart(2, '0')}`
+            } else {
+                document.getElementById('timer').innerHTML = `${hour.padStart(2, '0')}<span style="color:#0d1320">:</span>${minute.padStart(2, '0')}`
+            }
+            document.getElementById('date').innerHTML = `${month.padStart(2, '0')}月${day.padStart(2, '0')}日`
+            showSymbl = !showSymbl
+        }
+        clock()
+        setInterval(() => {
+            clock()
+        }, 1000)
+    </script>
 </body>
 
 </html>
