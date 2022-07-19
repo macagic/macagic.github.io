@@ -2,7 +2,7 @@
                 var role_lst = [5,'left',450,200];
             };
             var role_lst2 = ["koharu", 'hijiki', "tororo", "shizuku", "wanko", "z16"];
-                          // 小可爱（默认）黑猫 萌娘 白猫 狗狗 小可爱
+                          // 小可爱  黑猫 萌娘 白猫 狗狗 小可爱（默认）
             L2Dwidget.init({
                 "model": {
                     "jsonPath": "https://unpkg.com/live2d-widget-model-" + role_lst2[role_lst[0]] + "@1.0.5/assets/" + role_lst2[role_lst[0]] + ".model.json",
