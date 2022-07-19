@@ -1,25 +1,16 @@
-            if (typeof(role_num) == "undefined") {
-                var role_num = 5;
+            if (typeof(role_lst1) == "undefined") {
+                var role_lst1 = [5,'left',450,200];
             };
-            if (typeof(role_p) == "undefined") {
-                var role_p = 'left';
-            };
-            if (typeof(role_w) == "undefined") {
-                var role_w = '450';
-            };
-            if (typeof(role_h) == "undefined") {
-                var role_h = '200';
-            };
-            var lst = ["koharu", 'hijiki', "tororo", "shizuku", "wanko", "z16"];
+            var role_lst2 = ["koharu", 'hijiki', "tororo", "shizuku", "wanko", "z16"];
             L2Dwidget.init({
                 "model": {
-                    "jsonPath": "https://unpkg.com/live2d-widget-model-" + lst[role_num] + "@1.0.5/assets/" + lst[role_num] + ".model.json",
+                    "jsonPath": "https://unpkg.com/live2d-widget-model-" + role_lst2[role_lst1[0]] + "@1.0.5/assets/" + role_lst2[role_lst1[0]] + ".model.json",
                     "scale": 1
                 },
                 "display": {
-                    "position": role_p,
-                    "width": role_w,
-                    "height": role_h,
+                    "position": role_lst[1],
+                    "width": role_lst[2],
+                    "height": role_lst[3],
                     "hOffset": 0,
                     "vOffset": -100
                 },
