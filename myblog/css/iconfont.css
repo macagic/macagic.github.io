@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "iconfont";
+    /* Project id  */
+    src: url('../fonts/iconfont.ttf') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 22px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-csdn:before {
+    content: "\e638";
+}
+
+.icon-mail:before {
+    content: "\e60e";
+}
+
+.icon-mail1:before {
+    content: "\e7ad";
+}
+
+.icon-bilibili:before {
+    content: "\e609";
+}
