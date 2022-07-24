@@ -1,7 +1,7 @@
 @font-face {
     font-family: "iconfont";
     /* Project id  */
-    src: url('https://gitcode.net/m0_61979183/ye/-/raw/master/font/iconfont.ttf') format('truetype');
+    src: url('https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/myblog/css/iconfont.ttf') format('truetype');
 }
 
 .iconfont {
