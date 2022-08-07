@@ -70,12 +70,7 @@
             border-radius: 1em 1em 66% 66%;
             box-shadow: -2px -4px rgba(0, 0, 0, .1) inset;
         }
-        
-        .dreamer-paul {
-            font-size: .5em;
-            content: "奇趣保罗原创作品";
-        }
-        
+
         .robot-shoulder {
             top: 0;
             width: 1em;
@@ -91,7 +86,6 @@
         .robot-shoulder.left {
             left: 0;
             transform: rotate(50deg);
-            /*border-radius: 66% 30% 66% 66%;*/
             animation: robot-shoulder-left 1s both infinite alternate;
         }
         
