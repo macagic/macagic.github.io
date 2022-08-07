@@ -1,5 +1,5 @@
 if (typeof(role_lst) == "undefined") {
-    var role_lst = [5,'left',450,200];
+    var role_lst = [5,'left',200,450];
 };
 var role_lst2 = ["koharu", 'hijiki', "tororo", "shizuku", "wanko", "z16"];
               // 小可爱（默认）  黑猫 萌娘 白猫 狗狗 小可爱（！默认）
