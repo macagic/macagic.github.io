@@ -1,0 +1,106 @@
+body {
+    background: #fafafa;
+}
+
+acgp {
+    top: 2em;
+    right: 0;
+    width: 16em;
+    display: block;
+    position: fixed;
+    background: #fff;
+    transition: transform .3s;
+    transform: translateX(12em);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1), 0 5px 10px rgba(0, 0, 0, .1);
+}
+
+acgp:hover {
+    transform: translateX(10em);
+}
+
+acgp.active,
+acgp.active:hover {
+    transform: translateX(0);
+}
+
+.acgp-cover {
+    width: 4em;
+    height: 4em;
+    float: left;
+    cursor: pointer;
+    margin-right: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: contain;
+    transition: background .3s;
+}
+
+.acgp-info {
+    float: left;
+    width: 9em;
+    line-height: 1;
+    padding: .75em 0;
+}
+
+.acgp-title,
+.acgp-artist {
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-bottom: .5em;
+    text-overflow: ellipsis;
+}
+
+.acgp-artist {
+    color: #666;
+    font-size: .8em;
+}
+
+.acgp-controls {
+    float: right;
+}
+
+.acgp-controls .acgp-toggle,
+.acgp-controls .acgp-next,
+.acgp-controls .acgp-loop,
+.acgp-controls .acgp-volume {
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+}
+
+.acgp-toggle {
+    background: #ffb03a
+}
+
+.acgp-next {
+    background: #da68ff
+}
+
+.acgp-loop {
+    background: #00f4f5
+}
+
+.acgp-volume {
+    background: #37f557
+}
+
+.acgp-bar {
+    left: 4em;
+    right: 1em;
+    bottom: 0;
+    height: 2px;
+    position: absolute;
+}
+
+.acgp-bar .loaded,
+.acgp-bar .played {
+    top: 0;
+    height: 2px;
+    max-width: 100%;
+    position: absolute;
+}
+
+.acgp-bar .played {
+    background: #ff6359
+}
