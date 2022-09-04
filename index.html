@@ -44,45 +44,8 @@
     <div id="hans-bolang"></div>
     <script src="https://api.vvhan.com/api/bolang"></script>
     <!--END 外源接口   🚀   -->
-   <div class="returnTop" id="btn"><span class="iconfont icon-fanhuidingbu"></span></div>
-    <script>
-        // 返回顶部
-        var obtn = document.getElementById('btn');
-        var timer = null;
-        var isTop = true;
-        //获取页面的可视窗口高度
-        var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
-        //滚动条滚动时触发
-        window.onscroll = function() {
-            //在滚动的时候增加判断
-            var osTop = document.documentElement.scrollTop || document.body.scrollTop; //特别注意这句，忘了的话很容易出错
-            if (osTop == 0) {
-                obtn.style.display = 'none';
-            } else {
-                obtn.style.display = 'block';
-            }
-            if (!isTop) {
-                clearInterval(timer);
-            }
-            isTop = false;
-        };
-        btn.onclick = function() {
-            //设置定时器
-            timer = setInterval(function() {
-                //获取滚动条距离顶部的高度
-                var osTop = document.documentElement.scrollTop || document.body.scrollTop; //同时兼容了ie和Chrome浏览器
-                //减小的速度
-                var isSpeed = Math.floor(-osTop / 6);
-                document.documentElement.scrollTop = document.body.scrollTop = osTop + isSpeed;
-                //console.log( osTop + isSpeed);
-                isTop = true;
-                //判断，然后清除定时器
-                if (osTop == 0) {
-                    clearInterval(timer);
-                }
-            }, 30);
-        };
-    </script>
+    <div class="returnTop" id="btn"><span class="iconfont icon-fanhuidingbu"></span></div>
+    <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/js/top.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/Tweb/js/樱花背景.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/Tweb/js/弹出爱心.js"></script>
     <div class='box'>
@@ -99,7 +62,7 @@
      
         <div id='music'>
             <h2>(●'◡'●)来首音乐？</h2>
-            <div class="bear"></div>
+            <div class="bear" id="bear"></div>
         <!--<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=526472519&auto=0&height=66"></iframe> -->
             <div id="app"></div>
         <!-- 加载 cplayer 脚本 -->
@@ -126,6 +89,7 @@
         <a href='https://skyline.github.com/macagic'>skyline</a>
         <button onclick="hide()">隐藏看板娘</button>
         <button onclick="show()">显示</button>
+        <button onclick="hide_show('bear')">Click</button>
         <div id='update_message'>
             <p> 快蛇：加速，可碰蛇身，删除首尾行40格出现食物的情况<p>
             <p>修复快蛇身体重叠时,身体被涂黑的bug</p>
