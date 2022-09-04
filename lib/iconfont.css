@@ -1,0 +1,108 @@
+.bear {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background: url('https://gitcode.net/m0_61979183/ye/-/raw/master/bear.png?') no-repeat;
+    /* 我们元素可以添加多个动画， 用逗号分隔 */
+    animation: bear .4s steps(8) infinite, move 3s forwards;
+}
+
+@keyframes bear {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -1600px 0;
+    }
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 40%;
+        transform: translateX(-50%);
+    }
+}
+
+.returnTop {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: fixed;
+    left: 0.75rem;
+    /* right: 0.75rem; */
+    bottom: 10%;
+    background: #03a9f4;
+    text-align: center;
+    line-height: 60px;
+}
+
+.returnTop i {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#btn {
+    display: none;
+}
+
+@font-face {
+    font-family: "iconfont";
+    /* Project id  */
+    src: url('iconfont.ttf?') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-contact:before {
+    content: "\e604";
+}
+
+.icon-gongjuxiang:before {
+    content: "\e61d";
+}
+
+.icon-person:before {
+    content: "\e6ab";
+}
+
+.icon-fanhuidingbu:before {
+    content: "\e602";
+}
+
+.icon-csdn:before {
+    content: "\e638";
+}
+
+.icon-connection:before {
+    content: "\e851";
+}
+
+.icon-mail:before {
+    content: "\e60e";
+}
+
+.icon-TOP:before {
+    content: "\e605";
+}
+
+.icon-blogging:before {
+    content: "\ec9d";
+}
+
+.icon-search:before {
+    content: "\e67d";
+}
+
+.icon-bilibili:before {
+    content: "\e609";
+}
