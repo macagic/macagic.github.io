@@ -33,56 +33,9 @@
         .words_box {
             background-image: url('https://img0.baidu.com/it/u=255820472,3712711141&fm=253&fmt=auto&app=138&f=GIF?w=1000&h=200');
         }
-        .bear {
-            position: absolute;
-            width: 200px;
-            height: 100px;
-            background: url('https://gitcode.net/m0_61979183/ye/-/raw/master/bear.png?') no-repeat;
-            /* 我们元素可以添加多个动画， 用逗号分隔 */
-            animation: bear .4s steps(8) infinite, move 3s forwards;
-        }
-        
-        @keyframes bear {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: -1600px 0;
-            }
-        }
-        
-        @keyframes move {
-            0% {
-                left: 0;
-            }
-            100% {
-                left: 40%;
-                transform: translateX(-50%);
-            }
-        }
-        .returnTop {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            position: fixed;
-            left: 0.75rem;
-            /* right: 0.75rem; */
-            bottom: 10%;
-            background: #03a9f4;
-            text-align: center;
-            line-height: 60px;
-        }
-        
-        .returnTop i {
-            color: #fff;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        
-        #btn {
-            display: none;
-        }
     </style>
+    <!--  熊 返回顶部 iconfont-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/iconfont.css">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/ta.ico" type="image/x-icon">
 </head>
 
@@ -90,10 +43,8 @@
     <!--  外源接口  没保障  算上这个有7处-->
     <div id="hans-bolang"></div>
     <script src="https://api.vvhan.com/api/bolang"></script>
-    <!--END 外源接口      -->
-   <div class="returnTop" id="btn">
-        <i class="aui-iconfont aui-icon-top">🚀</i>
-    </div>
+    <!--END 外源接口   🚀   -->
+   <div class="returnTop" id="btn"><span class="iconfont icon-fanhuidingbu"></span></div>
     <script>
         // 返回顶部
         var obtn = document.getElementById('btn');
@@ -138,18 +89,18 @@
         <h1 id='live'>你好 欢迎来到凡叶的实验地</h1>
         <a href="https://macagic.github.io/Links.html">Links</a>
         <a href="Rbs.html">贪吃蛇 1</a>
-        <a href="Rbs2.html">贪吃蛇 2</a>
-        <a href='quick_snake2.html'>快蛇</a>
-        <a href='flower.html'>一支玫瑰</a>
         <a href='recorder.html'>海洋录音机</a>
         <a href='miao.html'>白喵</a>
         <a href='https://macagic.github.io/sweb/HTML/index.html'>进入主页</a>
         <a href="https://macagic.github.io/Tweb/index.html">Tweb</a>
-        <a href='https://anonfiles.com/T2a1e03cyb/Macagic_apk'>app</a>
+        <a href="https://macagic.github.io/myblog/index.html">myblog</a>
+        <a href="https://macagic.github.io/EatKano/index.html">音游</a>
+        <a href="http://check.uomg.com/dwzcn_dwz.html">短链接-外</a>
+     
         <div id='music'>
             <h2>(●'◡'●)来首音乐？</h2>
             <div class="bear"></div>
-<!--             <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=526472519&auto=0&height=66"></iframe> -->
+        <!--<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=526472519&auto=0&height=66"></iframe> -->
             <div id="app"></div>
         <!-- 加载 cplayer 脚本 -->
         <script src="https://cdn.jsdelivr.net/npm/cplayer/dist/cplayer.min.js"></script>
@@ -165,10 +116,9 @@
                     sublyric: '副歌词，一般为翻译...'}, ]
             })
         </script>
-<!--             <p>越来越不懂/say something/劈你的雷正在路上</p>
+<!--        <p>越来越不懂/say something/劈你的雷正在路上</p>
             <audio  controls="" ><source src="https://gitcode.net/m0_61979183/ye/-/raw/master/越来越不懂.m4a" type="audio/mp3"></audio>
             <audio  autoplay="" controls="" ><source src="https://gitcode.net/m0_61979183/ye/-/raw/master/say.m4a" type="audio/mp3"></audio>
-            <audio  controls="" ><source src="https://gitcode.net/m0_61979183/ye/-/raw/master/say.m4a" type="audio/mp3"></audio>
             <audio  controls="" ><source src="https://gitcode.net/m0_61979183/ye/-/raw/master/pn.m4a" type="audio/mp3"></audio> -->
         </div>
 <!--         <a href='test.html'>你想看天气之子吗？</a> -->
@@ -187,6 +137,7 @@
             <p>对部分链接更名，app更新为1.2.0版本</p>
             <p>合并海泡泡与录音机，并增加赛博按钮，更名为海洋录音机</p>
             <p>下一步有可能，在海洋录音机的基础上，再整合白喵，并增加极简风格时钟</p>
+            <p>增加部分链接 部分链接收入Links<p>
         </div>
     </div>
     
