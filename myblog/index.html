@@ -138,6 +138,8 @@
                             <div class="card-about card-item" id="about" style="background-image:url(images/background/2.jpg)">
                                 <div class="card-inner">
                                    <h4 class="title">About Me</h4>
+                                   <div id="app"></div>
+                                   <br>
                                    <div class="heart">
                                         <span></span>
                                         <span></span>
@@ -149,22 +151,20 @@
                                         <span></span>
                                         <span></span>
                                     </div>
-                                    <br>
-                                    <div id="app" style="height: 22px;"></div>
-                                        <script src="https://cdn.jsdelivr.net/npm/cplayer/dist/cplayer.min.js"></script>
-                                        <script>
-                                            let player = new cplayer({
-                                                element: document.getElementById('app'),
-                                                playlist: [{
-                                                    src: 'https://api.paugram.com/acgm?play=true',
-                                                    poster: 'https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/my.ico',
-                                                    name: '随机动漫歌曲',
-                                                    artist: '群星',
-                                                    lyric: '歌词...',
-                                                    sublyric: '副歌词，一般为翻译...'
-                                                }, ]
-                                            })
-                                        </script>
+                                    <script src="https://cdn.jsdelivr.net/npm/cplayer/dist/cplayer.min.js"></script>
+                                    <script>
+                                        let player = new cplayer({
+                                            element: document.getElementById('app'),
+                                            playlist: [{
+                                                src: 'https://api.paugram.com/acgm?play=true',
+                                                poster: 'https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/my.ico',
+                                                name: '随机动漫歌曲',
+                                                artist: '群星',
+                                                lyric: '歌词...',
+                                                sublyric: '副歌词，一般为翻译...'
+                                            }, ]
+                                        })
+                                    </script>
 <!--                                     <iframe src="https://macagic.github.io/sweb/PAGE/index.html" width="100%" height="100%"></iframe> -->
                                 </div>
                             </div>
