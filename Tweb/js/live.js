@@ -24,11 +24,14 @@ L2Dwidget.init({
         "opacityOnHover": 0.2
     }
 });
+    
+//  "live2d-widget"
+function hide_show(id) {
+    var node = document.getElementById(id);
 
-function hide() {
-    document.getElementById("live2d-widget").style.display = "none";
-};
-
-function show() {
-    document.getElementById("live2d-widget").style.display = "";
-};
+    if (node.style.display == "block") {
+        node.style.display = "none"; //隐藏
+    } else {
+        node.style.display = "block";//或者""
+    }
+}
