@@ -1,0 +1,26 @@
+    html,body{    padding:0;    margin:0;}
+        body {
+            background-image: url('https://static.runoob.com/images/mix/paper.gif');
+            background-color: #cccccc;
+        }
+        
+        .pics {
+            background-image: url('https://img0.baidu.com/it/u=2090683447,1450841930&fm=224&fmt=auto&gp=0.jpg');
+        }
+        
+        .blue {
+            color: rgb(8, 69, 235);
+            text-indent: 30px;
+        }
+        
+        .yellow {
+            color: rgb(235, 193, 8);
+            font-size: 19px;
+        }
+        .box {
+            width:100%;
+            background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0186cd5ac42c71a8012062e3f8d763.png%401280w_1l_2o_100sh.png&refer=http%3A%2F%2Fimg.zcool.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?');         
+        }
+        .words_box {
+            background-image: url('https://img0.baidu.com/it/u=255820472,3712711141&fm=253&fmt=auto&app=138&f=GIF?w=1000&h=200');
+        }
