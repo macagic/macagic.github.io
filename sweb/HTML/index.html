@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" class="no-js">
 <!-- Begin Head -->
-
 <head>
     <!-- Basic -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Macagic</title>
 
-
     <!-- Web Fonts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/HTML/css/font.css">
-
-
 
     <!-- Vendor Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/sweb/HTML/vendor/bootstrap/css/bootstrap.min.css">
@@ -21,107 +17,7 @@
  
     <!-- Theme Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/macagic/macagic.github.io/sweb/HTML/css/style.css,gh/macagic/macagic.github.io/sweb/HTML/css/global/global.css">
-
-    <style>
-        /*SECTION-TIMELINE*/
-        
-        .section-timeline {
-            background-color: white;
-            padding-top: 5rem;
-        }
-        
-        .timeline {
-            list-style: none;
-            padding: 20px 0 80px;
-            padding-top: 50px;
-            position: relative;
-        }
-        
-        .timeline:before {
-            top: 0;
-            bottom: 0;
-            position: absolute;
-            content: " ";
-            width: 3px;
-            background-color: #eeeeee;
-            left: 50%;
-            margin-left: -1.5px;
-        }
-        
-        .timeline>li {
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .timeline>li:before,
-        .timeline>li:after {
-            display: table;
-            content: " ";
-        }
-        
-        .timeline>li:after {
-            clear: both;
-        }
-        
-        .timeline>li>.timeline-panal {
-            width: 50%;
-            float: left;
-            border: 1px solid #d4d4d4;
-            border-radius: 2px;
-            padding: 20px;
-            position: relative;
-            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-        }
-        
-        .timeline p {
-            font-family: 'Josefin Sans', sans-serif;
-            ;
-            font-weight: 700;
-        }
-        
-        .timeline>li:not(.timeline-inverted) {
-            padding-right: 90px;
-        }
-        
-        .timeline>li.timeline-inverted {
-            padding-left: 90px;
-        }
-        
-        .timeline>li>.timeline-badge {
-            font-size: 2px;
-            /* !important  */
-            color: #FFF;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            position: absolute;
-            top: 16px;
-            left: 50%;
-            margin-left: -25px;
-            background-color: #129CF3;
-            border-top-right-radius: 50%;
-            border-top-left-radius: 50%;
-            border-bottom-right-radius: 50%;
-            border-bottom-left-radius: 50%;
-        }
-        
-        .timeline>li>.timeline-badge>.counteryear {
-            color: #FFF;
-            font-weight: 900;
-        }
-        
-        .timeline>li.timeline-inverted>.timeline-panal {
-            float: right;
-        }
-        
-        .timeline-title {
-            font-size: 20px;
-            font-weight: 700;
-            font-family: 'Playfair Display', serif;
-        }
-    </style>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/macagic/macagic.github.io/sweb/HTML/css/my_timeline.css">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="https://gitcode.net/m0_61979183/ye/-/raw/master/my.ico?" type="image/x-icon">
@@ -129,9 +25,7 @@
 <!-- End Head -->
 
 <!-- Body -->
-
 <body>
-
     <!--========== HEADER ==========-->
     <header class="navbar-fixed-top s-header js__header-sticky js__header-overlay">
         <!-- Navbar -->
@@ -240,11 +134,9 @@
         <!-- End Swiper Wrapper -->
 
         <!-- //ye live2d角色插入-->
-        <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/Tweb/js/live.js"></script>
-<!--         <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/Tweb/js/检查手机2.js"></script> -->
-        
-        
+        <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/L2Dwidget.min.js"></script>   
+        <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/live.js"></script>   
+<!--         <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/Tweb/js/检查手机2.js"></script> --> 
         <!--  End //ye live2d角色插入-->
 
         <!-- Arrows -->
@@ -372,7 +264,7 @@
                         <input type="email" class="form-control s-form-v1__input g-radius--left-50" name="email" placeholder="Enter your email">
                         <span class="input-group-btn">
                                 <button type="submit" class="s-btn s-btn-icon--md s-btn-icon--white-brd s-btn--white-brd g-radius--right-50"><i class="ti-arrow-right"></i></button>
-                            </span>
+                        </span>
                     </form>
                 </div>
             </div>
@@ -693,18 +585,14 @@
     <!--========== JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) ==========-->
     <!-- Vendor -->
     <script src="https://cdn.jsdelivr.net/combine/gh/macagic/macagic.github.io/sweb/HTML/vendor/bootstrap/js/bootstrap.min.js,gh/macagic/macagic.github.io/sweb/HTML/vendor/jquery.smooth-scroll.min.js,gh/macagic/macagic.github.io/sweb/HTML/vendor/jquery.back-to-top.min.js"></script>
-<!--     <script src="https://cdn.jsdelivr.net/combine/gh/macagic/macagic.github.io/sweb/HTML/vendor/jquery.min.js,gh/macagic/macagic.github.io/sweb/HTML/vendor/bootstrap/js/bootstrap.min.js,gh/macagic/macagic.github.io/sweb/HTML/vendor/jquery.smooth-scroll.min.js,gh/macagic/macagic.github.io/sweb/HTML/vendor/jquery.back-to-top.min.js"></script> -->
+<!--     <script src="https://cdn.jsdelivr.net/combine/gh/macagic/macagic.github.io/sweb/HTML/vendor/jquery.min.js,..."></script> -->
     <script src="https://cdn.jsdelivr.net/combine/gh/macagic/macagic.github.io/sweb/HTML/vendor/scrollbar/jquery.scrollbar.min.js,gh/macagic/macagic.github.io/sweb/HTML/vendor/swiper/swiper.jquery.min.js,gh/macagic/macagic.github.io/sweb/HTML/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js,gh/macagic/macagic.github.io/sweb/HTML/vendor/jquery.parallax.min.js,gh/macagic/macagic.github.io/sweb/HTML/vendor/jquery.wow.min.js"></script>
     
     
-
     <!-- General Components and Settings -->
     <script src="https://cdn.jsdelivr.net/combine/gh/macagic/macagic.github.io/sweb/HTML/js/global.min.js,gh/macagic/macagic.github.io/sweb/HTML/js/components/header-sticky.min.js,gh/macagic/macagic.github.io/sweb/HTML/js/components/scrollbar.min.js,gh/macagic/macagic.github.io/sweb/HTML/js/components/swiper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/combine/gh/macagic/macagic.github.io/sweb/HTML/js/components/portfolio-3-col.min.js,gh/macagic/macagic.github.io/sweb/HTML/js/components/parallax.min.js,gh/macagic/macagic.github.io/sweb/HTML/js/components/google-map.min.js,gh/macagic/macagic.github.io/sweb/HTML/js/components/wow.min.js"></script>
     <!--========== END JAVASCRIPTS ==========-->
-
-
-
 
 </body>
 <!-- End Body -->
