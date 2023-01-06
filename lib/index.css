@@ -19,7 +19,7 @@
         }
         .box {
             width:100%;
-/*             background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0186cd5ac42c71a8012062e3f8d763.png%401280w_1l_2o_100sh.png&refer=http%3A%2F%2Fimg.zcool.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?');          */
+            border: 3px solid white;
             background-image: url('https://tenapi.cn/acg');         
         }
         .words_box {
