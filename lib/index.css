@@ -20,7 +20,8 @@
         .box {
             width:100%;
             border: 3px solid white;
-            background-image: url('https://tenapi.cn/acg');         
+            background-image: url('https://api.vvhan.com/api/acgimg');    
+/*          https://tenapi.cn/acg      */
         }
         .words_box {
             background-image: url('https://img0.baidu.com/it/u=255820472,3712711141&fm=253&fmt=auto&app=138&f=GIF?w=1000&h=200');
