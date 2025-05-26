@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的练习笔记 - 凡叶的实验地</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/iconfont.css">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/my.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #6e8efb;
+        }
+
+        main {
+            padding: 40px 0;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid #f0f2f5;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #6e8efb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #a777e3;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #6e8efb;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #5c7cfa;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .music-section {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .music-section h2 {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .returnTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #6e8efb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .returnTop.visible {
+            opacity: 1;
+        }
+
+        .heart {
+            position: fixed;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+        }
+
+        .heart:after,
+        .heart:before {
+            content: '';
+            width: inherit;
+            height: inherit;
+            background: inherit;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            position: fixed;
+        }
+
+        .heart:after {
+            top: -5px;
+        }
+
+        .heart:before {
+            left: -5px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>我的练习笔记</h1>
+            <p>你好，欢迎来到凡叶的实验地</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="#music">音乐</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="home">
+            <h2>项目展示</h2>
+            <div class="card">
+                <a href="Links.html" class="btn">Links</a>
+                <a href="Rbs.html" class="btn">贪吃蛇 1</a>
+                <a href="recorder.html" class="btn">海洋录音机</a>
+                <a href="miao.html" class="btn">白喵</a>
+                <a href="https://macagic.github.io/sweb/HTML/" class="btn">进入主页</a>
+                <a href="http://myclub-8gesdtuf680d04bf-1312814900.tcloudbaseapp.com/m/myblog/" class="btn">myblog</a>
+                <a href="http://myclub-8gesdtuf680d04bf-1312814900.tcloudbaseapp.com/Fweb/" class="btn">Fweb</a>
+                <a href="https://macagic.github.io/EatKano/" class="btn">音游</a>
+            </div>
+        </section>
+
+        <section id="music">
+            <h2>音乐播放器</h2>
+            <div class="music-section">
+                <h3>(●'◡'●)来首音乐？</h3>
+                <div id="app"></div>
+                <script>
+                    let player = new cplayer({
+                        element: document.getElementById('app'),
+                        playlist: [{
+                            src: 'https://api.paugram.com/acgm?play=true',
+                            poster: 'https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/my.ico',
+                            name: '随机动漫歌曲',
+                            artist: '群星',
+                            lyric: '歌词...',
+                            sublyric: '副歌词，一般为翻译...'
+                        }]
+                    });
+                </script>
+            </div>
+        </section>
+
+        <section id="updates">
+            <h2>更新日志</h2>
+            <div class="card">
+                <h3>快蛇版本更新</h3>
+                <ul>
+                    <li>修复快蛇身体重叠时，身体被涂黑的bug</li>
+                    <li>合并快蛇版本，调整蛇2速度，优化结构</li>
+                    <li>蛇2故意留了一点可以出框的特性</li>
+                    <li>删除部分原始版本</li>
+                    <li>在多次误以为解决了，此次彻底解决快蛇版本，身体重叠，导致身体不连贯的bug</li>
+                    <li>对部分链接更名，app更新为1.2.0版本</li>
+                    <li>合并海泡泡与录音机，并增加赛博按钮，更名为海洋录音机</li>
+                    <li>下一步有可能，在海洋录音机的基础上，增加极简风格时钟</li>
+                    <li>增加部分链接，部分链接收入Links</li>
+                    <li>陆陆续续调整优化细节</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 我的练习笔记. 保留所有权利.</p>
+            <p>本站总访问量<span id="busuanzi_value_site_pv"></span>次.</p>
+            <p>您是第<span id="busuanzi_value_site_uv"></span>个小伙伴</p>
+        </div>
+    </footer>
+
+    <div class="returnTop" id="btn">
+        <span class="iconfont icon-fanhuidingbu">↑</span>
+    </div>
+
+    <script src="https://90-1312814900.cos.ap-beijing.myqcloud.com/m%2Fjs%2Ftya.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/L2Dwidget.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/live.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Valine/1.4.14/Valine.min.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script>
+        // 返回顶部按钮
+        var obtn = document.getElementById("btn");
+        var timer = null;
+        var isTop = true;
+        var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+        window.onscroll = function() {
+            var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if (osTop == 0) {
+                obtn.style.display = "none";
+            } else {
+                obtn.style.display = "block";
+            }
+            if (!isTop) {
+                clearInterval(timer);
+            }
+            isTop = false;
+        };
+
+        obtn.onclick = function() {
+            timer = setInterval(function() {
+                var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+                var isSpeed = Math.floor(-osTop / 6);
+                document.documentElement.scrollTop = document.body.scrollTop = osTop + isSpeed;
+                isTop = true;
+                if (osTop == 0) {
+                    clearInterval(timer);
+                }
+            }, 30);
+        };
+
+        // 樱花特效
+        function Sakura(x, y, s, r, fn) {
+            this.x = x;
+            this.y = y;
+            this.s = s;
+            this.r = r;
+            this.fn = fn;
+        }
+
+        Sakura.prototype.draw = function(cxt) {
+            cxt.save();
+            var xc = 40 * this.s / 4;
+            cxt.translate(this.x, this.y);
+            cxt.rotate(this.r);
+            cxt.drawImage(img, 0, 0, 40 * this.s, 40 * this.s);
+            cxt.restore();
+        }
+
+        Sakura.prototype.update = function() {
+            this.x = this.fn.x(this.x, this.y);
+            this.y = this.fn.y(this.y, this.y);
+            this.r = this.fn.r(this.r);
+            if (this.x > window.innerWidth ||
+                this.x < 0 ||
+                this.y > window.innerHeight ||
+                this.y < 0
+            ) {
+                this.r = getRandom('fnr');
+                if (Math.random() > 0.4) {
+                    this.x = getRandom('x');
+                    this.y = 0;
+                    this.s = getRandom('s');
+                    this.r = getRandom('r');
+                } else {
+                    this.x = window.innerWidth;
+                    this.y = getRandom('y');
+                    this.s = getRandom('s');
+                    this.r = getRandom('r');
+                }
+            }
+        }
+
+        SakuraList = function() {
+            this.list = [];
+        }
+
+        SakuraList.prototype.push = function(sakura) {
+            this.list.push(sakura);
+        }
+
+        SakuraList.prototype.update = function() {
+            for (var i = 0, len = this.list.length; i < len; i++) {
+                this.list[i].update();
+            }
+        }
+
+        SakuraList.prototype.draw = function(cxt) {
+            for (var i = 0, len = this.list.length; i < len; i++) {
+                this.list[i].draw(cxt);
+            }
+        }
+
+        SakuraList.prototype.get = function(i) {
+            return this.list[i];
+        }
+
+        SakuraList.prototype.size = function() {
+            return this.list.length;
+        }
+
+        function getRandom(option) {
+            var ret, random;
+            switch (option) {
+                case 'x':
+                    ret = Math.random() * window.innerWidth;
+                    break;
+                case 'y':
+                    ret = Math.random() * window.innerHeight;
+                    break;
+                case 's':
+                    ret = Math.random();
+                    break;
+                case 'r':
+                    ret = Math.random() * 6;
+                    break;
+                case 'fnx':
+                    random = -0.5 + Math.random() * 1;
+                    ret = function(x, y) {
+                        return x + 0.5 * random - 1.7;
+                    };
+                    break;
+                case 'fny':
+                    random = 1.5 + Math.random() * 0.7;
+                    ret = function(x, y) {
+                        return y + random;
+                    };
+                    break;
+                case 'fnr':
+                    random = Math.random() * 0.03;
+                    ret = function(r) {
+                        return r + random;
+                    };
+                    break;
+            }
+            return ret;
+        }
+
+        function startSakura() {
+            requestAnimationFrame = window.requestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.msRequestAnimationFrame ||
+                window.oRequestAnimationFrame;
+            var canvas = document.createElement('canvas'),
+                cxt;
+            staticx = true;
+            canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+            canvas.setAttribute('style', 'position: fixed;left: 0;top: 0;pointer-events: none;');
+            canvas.setAttribute('id', 'canvas_sakura');
+            document.getElementsByTagName('body')[0].appendChild(canvas);
+            cxt = canvas.getContext('2d');
+            var sakuraList = new SakuraList();
+            for (var i = 0; i < 50; i++) {
+                var sakura, randomX, randomY, randomS, randomR, randomFnx, randomFny;
+                randomX = getRandom('x');
+                randomY = getRandom('y');
+                randomR = getRandom('r');
+                randomS = getRandom('s');
+                randomFnx = getRandom('fnx');
+                randomFny = getRandom('fny');
+                randomFnR = getRandom('fnr');
+                sakura = new Sakura(randomX, randomY, randomS, randomR, {
+                    x: randomFnx,
+                    y: randomFny,
+                    r: randomFnR
+                });
+                sakura.draw(cxt);
+                sakuraList.push(sakura);
+            }
+            stop = requestAnimationFrame(function() {
+                cxt.clearRect(0, 0, canvas.width, canvas.height);
+                sakuraList.update();
+                sakuraList.draw(cxt);
+                stop = requestAnimationFrame(arguments.callee);
+            });
+        }
+
+        window.onresize = function() {
+            var canvasSnow = document.getElementById('canvas_sakura');
+            canvasSnow.width = window.innerWidth;
+            canvasSnow.height = window.innerHeight;
+        }
+
+        img.onload = function() {
+            startSakura();
+        }
+
+        function stopp() {
+            if (staticx) {
+                var child = document.getElementById("canvas_sakura");
+                child.parentNode.removeChild(child);
+                window.cancelAnimationFrame(stop);
+                staticx = false;
+            } else {
+                startSakura();
+            }
+        }
+
+        // 心形特效
+        !function(e, t, a) {
+            function r() {
+                for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+                requestAnimationFrame(r)
+            }
+
+            function n() {
+                var t = "function" == typeof e.onclick && e.onclick;
+                e.onclick = function(e) {
+                    t && t(), o(e)
+                }
+            }
+
+            function o(e) {
+                var a = t.createElement("div");
+                a.className = "heart", s.push({
+                    el: a,
+                    x: e.clientX - 5,
+                    y: e.clientY - 5,
+                    scale: 1,
+                    alpha: 1,
+                    color: c()
+                }), t.body.appendChild(a)
+            }
+
+            function i(e) {
+                var a = t.createElement("style");
+                a.type = "text/css";
+                try {
+                    a.appendChild(t.createTextNode(e))
+                } catch (t) {
+                    a.styleSheet.cssText = e
+                }
+                t.getElementsByTagName("head")[0].appendChild(a)
+            }
+
+            function c() {
+                return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+            }
+            var s = [];
+            e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function(e) {
+                setTimeout(e, 1e3 / 60)
+            }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}", n(), r());
+        }(window, document);
+    </script>
+</body>
+</html>
