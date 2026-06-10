@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的练习笔记 - 凡叶的实验地</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/iconfont.css">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/my.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(110, 142, 251, 0.15);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            background-color: white;
+            padding: 16px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #6e8efb;
+            background-color: #f5f7ff;
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        section:hover {
+            transform: translateY(-2px);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #f0f2f5;
+            padding-bottom: 12px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        a {
+            color: #6e8efb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #a777e3;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #6e8efb, #7c8ffc);
+            color: white;
+            padding: 11px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 6px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #5c7cfa, #6b82f5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(110, 142, 251, 0.2);
+            color: white;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .card ul {
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+        }
+
+        .music-section {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer {
+            background-color: #2d2d2d;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .returnTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(110, 142, 251, 0.3);
+            z-index: 999;
+        }
+
+        .returnTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .returnTop:hover {
+            transform: scale(1.08);
+        }
+
+        .heart {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ff5e94;
+            transform: rotate(45deg);
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .heart:after,
+        .heart:before {
+            content: '';
+            width: inherit;
+            height: inherit;
+            background: inherit;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart:after {
+            top: -5px;
+        }
+
+        .heart:before {
+            left: -5px;
+        }
+
+        /* 恋爱计时专属样式 */
+        .love-avatar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .love-avatar img {
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 0 10px rgba(110,142,251,0.2);
+        }
+        .love-timer {
+            font-size: 1.1rem;
+            color: #6e8efb;
+            font-weight: bold;
+            margin: 15px 0;
+            letter-spacing: 1px;
+        }
+        .love-title {
+            color: #a777e3 !important;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            section {
+                padding: 25px 20px;
+            }
+            .card {
+                padding: 20px;
+            }
+            .btn {
+                padding: 9px 18px;
+                margin: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>我的练习笔记</h1>
+            <p>你好，欢迎来到凡叶的实验地 ✨</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#love">我们</a></li>
+                <!-- <li><a href="#music">音乐</a></li> -->
+                <li><a href="#updates">更新</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="returnTop" id="btn"><span class="iconfont icon-fanhuidingbu"></span></div>
+
+    <main class="container">
+        <section id="home">
+            <h2>项目展示</h2>
+            <div class="card">
+                <a href="Links.html" class="btn">Links</a>
+                <a href="Rbs.html" class="btn">贪吃蛇 1</a>
+                <a href="recorder.html" class="btn">海洋录音机</a>
+                <a href="miao.html" class="btn">白喵</a>
+                <a href="https://macagic.github.io/EatKano/" class="btn">音游</a>
+            </div>
+        </section>
+
+ 
+        <section id="love">
+            <h2 class="love-title">💖 他与她</h2>
+            <div class="card" style="text-align: center;">
+                <div class="love-avatar">
+                    <img src="1.jpg" width="70" height="70">
+                    <img src="3.webp" width="50" height="50">
+                    <img src="2.jpg" width="70" height="70">
+                </div>
+
+                <h3>我们相识了</h3>
+                <div class="love-timer">
+                    <span id="d">0</span> 天
+                    <span id="h">00</span> 时
+                    <span id="m">00</span> 分
+                    <span id="s">00</span> 秒
+                </div>
+
+                <div style="margin-top:20px;">
+                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="52"
+                        src="//music.163.com/outchain/player?type=2&id=434902428&auto=1&height=32"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="music">
+            <h2>音乐播放器</h2>
+            <div class="music-section">
+                <h3>(●'◡'●) 来首音乐放松一下？</h3>
+                <div id="app"></div>
+            </div>
+        </section> -->
+
+        <section id="updates">
+            <h2>更新日志</h2>
+
+            <!-- <div class="card">
+                <h3>快蛇版本更新 v1.2.0</h3>
+                <ul>
+                    <li>修复快蛇身体重叠时，身体被涂黑的bug</li>
+                    <li>合并快蛇版本，调整蛇2速度，优化整体结构</li>
+                    <li>蛇2故意保留了轻微出框的特性</li>
+                    <li>删除部分老旧版本，精简项目</li>
+                    <li>彻底解决身体重叠导致不连贯的问题</li>
+                    <li>合并海泡泡与录音机，新增赛博按钮，更名海洋录音机</li>
+                    <li>下一步计划：在海洋录音机基础上增加极简时钟</li>
+                    <li>优化链接分类，部分收入Links</li>
+                    <li>持续优化细节体验</li>
+                </ul>
+            </div> -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 我的练习笔记 | 凡叶的实验地 保留所有权利</p>
+            <p class="mt-2">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</p>
+            <p>您是第 <span id="busuanzi_value_site_uv"></span> 位小伙伴</p>
+        </div>
+    </footer>
+
+    <div class="returnTop" id="returnTop"> ↑ </div>
+<!-- 
+    <script src="https://cdn.jsdelivr.net/npm/cplayer/dist/cplayer.min.js"></script>
+    <script src="https://90-1312814900.cos.ap-beijing.myqcloud.com/m%2Fjs%2Ftya.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/L2Dwidget.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/live.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script src="//cdn.jsdelivr.net/combine/gh/macagic/macagic.github.io/Tweb/js/樱花背景.js,gh/macagic/macagic.github.io/Tweb/js/弹出爱心.js,gh/macagic/macagic.github.io/lib/autoload.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'c1TrbCPJbJShGlFJ3X8KV1IY-gzGzoHsz',
+            appKey: 'NhEi2xaVVkFFSS16hfxJ1NnO',
+            avatar: 'wavatar'
+        })
+    </script>
+    <script>
+        // // 音乐播放器
+        // const player = new cplayer({
+        //     element: '#app',
+        //     playlist: [{
+        //         src: 'https://api.paugram.com/acgm?play=true',
+        //         poster: 'https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/my.ico',
+        //         name: '随机动漫歌曲',
+        //         artist: '群星',
+        //         lyric: '正在播放好听的音乐~',
+        //         sublyric: '欢迎来到凡叶的实验地'
+        //     }],
+        //     width: '100%',
+        //     autoplay: false
+        // });
+
+        // 返回顶部
+        const returnBtn = document.getElementById('returnTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                returnBtn.classList.add('show');
+            } else {
+                returnBtn.classList.remove('show');
+            }
+        });
+        returnBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 点击爱心特效
+        (function(e, t) {
+            let hearts = [];
+            const createHeart = (x, y) => {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                const color = `rgb(${Math.random()*255},${Math.random()*150+100},${Math.random()*255})`;
+                heart.style.background = color;
+                heart.style.left = x - 5 + 'px';
+                heart.style.top = y - 5 + 'px';
+                t.body.appendChild(heart);
+                
+                let opacity = 1;
+                let scale = 1;
+                let posY = y;
+                
+                const remove = () => { heart.remove(); hearts = hearts.filter(h => h.el !== heart); };
+                const animate = () => {
+                    if (opacity <= 0) return remove();
+                    posY -= 1.5;
+                    scale += 0.008;
+                    opacity -= 0.015;
+                    heart.style.top = posY + 'px';
+                    heart.style.opacity = opacity;
+                    heart.style.transform = `scale(${scale}) rotate(45deg)`;
+                    requestAnimationFrame(animate);
+                };
+                animate();
+                hearts.push({ el: heart });
+            };
+            t.addEventListener('click', (e) => { createHeart(e.clientX, e.clientY); });
+        })(window, document);
+
+        // 樱花特效
+        let img = new Image();
+        img.src = 'https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/img/sakura.png';
+        img.crossOrigin = "anonymous";
+        
+        window.addEventListener('load', () => {
+            if (img.complete) startSakura();
+            else img.onload = startSakura;
+        });
+
+        function startSakura() {
+            const canvas = document.createElement('canvas');
+            canvas.id = 'canvas_sakura';
+            canvas.style.cssText = 'position:fixed;left:0;top:0;pointer-events:none;z-index:10';
+            document.body.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            class Sakura {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 0.6 + 0.4;
+                    this.rotate = Math.random() * 6;
+                    this.speedX = Math.random() * 1 - 0.5;
+                    this.speedY = Math.random() * 1 + 0.5;
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    this.rotate += 0.01;
+                    if (this.y > canvas.height) this.y = 0;
+                    if (this.x > canvas.width) this.x = 0;
+                    if (this.x < 0) this.x = canvas.width;
+                }
+                draw() {
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.rotate(this.rotate);
+                    ctx.drawImage(img, -20 * this.size, -20 * this.size, 40 * this.size, 40 * this.size);
+                    ctx.restore();
+                }
+            }
+
+            const sakuras = Array.from({ length: 40 }, () => new Sakura());
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                sakuras.forEach(s => { s.update(); s.draw(); });
+                requestAnimationFrame(animate);
+            }
+            animate();
+
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+
+        // ==================================
+        // 纯原生计时 —— 不依赖任何外部文件
+        // ==================================
+        function showLoveTime() {
+            // ✅ 在这里修改你们的相识时间
+            var startDate = new Date("2026-05-17 20:31:00");
+            var nowDate = new Date();
+            
+            var diff = nowDate - startDate;
+
+            var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            document.getElementById("d").innerText = days;
+            document.getElementById("h").innerText = hours;
+            document.getElementById("m").innerText = minutes;
+            document.getElementById("s").innerText = seconds;
+        }
+        
+        showLoveTime();
+        setInterval(showLoveTime, 1000);
+    </script>
+</body>
+</html>
