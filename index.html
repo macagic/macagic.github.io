@@ -250,6 +250,7 @@
             font-weight: bold;
             margin: 15px 0;
             letter-spacing: 1px;
+            text-align: center;
         }
         .love-title {
             color: #a777e3 !important;
@@ -291,7 +292,7 @@
                 <li><a href="#home">首页</a></li>
                 <li><a href="#love">我们</a></li>
                 <!-- <li><a href="#music">音乐</a></li> -->
-                <li><a href="#updates">更新</a></li>
+                <li><a href="#updates">留言</a></li>
             </ul>
         </div>
     </nav>
@@ -343,8 +344,8 @@
         </section> -->
 
         <section id="updates">
-            <h2>更新日志</h2>
-
+            <h2>留言</h2>
+            <div id="vcomments"></div>
             <!-- <div class="card">
                 <h3>快蛇版本更新 v1.2.0</h3>
                 <ul>
@@ -379,7 +380,7 @@
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <script src="//cdn.jsdelivr.net/combine/gh/macagic/macagic.github.io/Tweb/js/樱花背景.js,gh/macagic/macagic.github.io/Tweb/js/弹出爱心.js,gh/macagic/macagic.github.io/lib/autoload.js"></script>
     <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-    <div id="vcomments"></div>
+
     <script>
         new Valine({
             el: '#vcomments',
