@@ -327,7 +327,7 @@
                     <span id="s">00</span> 秒
                 </div>
 
-                <div style="margin: 20px auto 0;" >
+                <div style="margin: 20px auto 0; display: flex; justify-content: center;" >
                     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="52"
                         src="//music.163.com/outchain/player?type=2&id=434902428&auto=1&height=32"></iframe>
                 </div>
@@ -353,8 +353,8 @@
 
 <!-- 
     <script src="https://cdn.jsdelivr.net/npm/cplayer/dist/cplayer.min.js"></script>
-    <script src="https://90-1312814900.cos.ap-beijing.myqcloud.com/m%2Fjs%2Ftya.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/L2Dwidget.min.js"></script> -->
+    <script src="https://90-1312814900.cos.ap-beijing.myqcloud.com/m%2Fjs%2Ftya.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/L2Dwidget.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/lib/live.js"></script>
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <script src="//cdn.jsdelivr.net/combine/gh/macagic/macagic.github.io/Tweb/js/樱花背景.js,gh/macagic/macagic.github.io/Tweb/js/弹出爱心.js,gh/macagic/macagic.github.io/lib/autoload.js"></script>
@@ -369,45 +369,47 @@
         })
     </script>
     <script>
-        // 返回顶部
-        const returnBtn = document.getElementById('returnTop');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                returnBtn.classList.add('show');
-            } else {
-                returnBtn.classList.remove('show');
-            }
-        });
-        returnBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-
         // ==================================
-        // 纯原生计时 —— 不依赖任何外部文件
+        // DOM加载完成后执行
         // ==================================
-        function showLoveTime() {
-            var startDate = new Date("2026-05-17 20:31:00");
-            var nowDate = new Date();
-            
-            var diff = nowDate - startDate;
-
-            var days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            hours = hours < 10 ? "0" + hours : hours;
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
-
-            document.getElementById("d").innerText = days;
-            document.getElementById("h").innerText = hours;
-            document.getElementById("m").innerText = minutes;
-            document.getElementById("s").innerText = seconds;
-        }
-        
         document.addEventListener('DOMContentLoaded', function() {
+            // 返回顶部
+            const returnBtn = document.getElementById('returnTop');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    returnBtn.classList.add('show');
+                } else {
+                    returnBtn.classList.remove('show');
+                }
+            });
+            returnBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // ==================================
+            // 纯原生计时 —— 不依赖任何外部文件
+            // ==================================
+            function showLoveTime() {
+                var startDate = new Date("2026-05-17 20:31:00");
+                var nowDate = new Date();
+                
+                var diff = nowDate - startDate;
+
+                var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                document.getElementById("d").innerText = days;
+                document.getElementById("h").innerText = hours;
+                document.getElementById("m").innerText = minutes;
+                document.getElementById("s").innerText = seconds;
+            }
+            
             showLoveTime();
             setInterval(showLoveTime, 1000);
         });
