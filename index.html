@@ -291,7 +291,6 @@
             <ul>
                 <li><a href="#home">首页</a></li>
                 <li><a href="#love">我们</a></li>
-                <!-- <li><a href="#music">音乐</a></li> -->
                 <li><a href="#updates">留言</a></li>
             </ul>
         </div>
@@ -328,41 +327,21 @@
                     <span id="s">00</span> 秒
                 </div>
 
-                <div style="margin-top:20px;">
+                <div style="margin: 20px auto 0;" >
                     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="52"
                         src="//music.163.com/outchain/player?type=2&id=434902428&auto=1&height=32"></iframe>
                 </div>
             </div>
         </section>
 
-        <!-- <section id="music">
-            <h2>音乐播放器</h2>
-            <div class="music-section">
-                <h3>(●'◡'●) 来首音乐放松一下？</h3>
-                <div id="app"></div>
-            </div>
-        </section> -->
-
         <section id="updates">
             <h2>留言</h2>
             <div id="vcomments"></div>
-            <!-- <div class="card">
-                <h3>快蛇版本更新 v1.2.0</h3>
-                <ul>
-                    <li>修复快蛇身体重叠时，身体被涂黑的bug</li>
-                    <li>合并快蛇版本，调整蛇2速度，优化整体结构</li>
-                    <li>蛇2故意保留了轻微出框的特性</li>
-                    <li>删除部分老旧版本，精简项目</li>
-                    <li>彻底解决身体重叠导致不连贯的问题</li>
-                    <li>合并海泡泡与录音机，新增赛博按钮，更名海洋录音机</li>
-                    <li>下一步计划：在海洋录音机基础上增加极简时钟</li>
-                    <li>优化链接分类，部分收入Links</li>
-                    <li>持续优化细节体验</li>
-                </ul>
-            </div> -->
         </section>
-    </main>
 
+        <div class="returnTop" id="returnTop"> ↑ </div>
+    </main>
+ 
     <footer>
         <div class="container">
             <p>&copy; 2025 我的练习笔记 | 凡叶的实验地 保留所有权利</p>
@@ -371,7 +350,7 @@
         </div>
     </footer>
 
-    <div class="returnTop" id="returnTop"> ↑ </div>
+
 <!-- 
     <script src="https://cdn.jsdelivr.net/npm/cplayer/dist/cplayer.min.js"></script>
     <script src="https://90-1312814900.cos.ap-beijing.myqcloud.com/m%2Fjs%2Ftya.js"></script>
@@ -390,21 +369,6 @@
         })
     </script>
     <script>
-        // // 音乐播放器
-        // const player = new cplayer({
-        //     element: '#app',
-        //     playlist: [{
-        //         src: 'https://api.paugram.com/acgm?play=true',
-        //         poster: 'https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/my.ico',
-        //         name: '随机动漫歌曲',
-        //         artist: '群星',
-        //         lyric: '正在播放好听的音乐~',
-        //         sublyric: '欢迎来到凡叶的实验地'
-        //     }],
-        //     width: '100%',
-        //     autoplay: false
-        // });
-
         // 返回顶部
         const returnBtn = document.getElementById('returnTop');
         window.addEventListener('scroll', () => {
@@ -418,103 +382,11 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // 点击爱心特效
-        (function(e, t) {
-            let hearts = [];
-            const createHeart = (x, y) => {
-                const heart = document.createElement('div');
-                heart.className = 'heart';
-                const color = `rgb(${Math.random()*255},${Math.random()*150+100},${Math.random()*255})`;
-                heart.style.background = color;
-                heart.style.left = x - 5 + 'px';
-                heart.style.top = y - 5 + 'px';
-                t.body.appendChild(heart);
-                
-                let opacity = 1;
-                let scale = 1;
-                let posY = y;
-                
-                const remove = () => { heart.remove(); hearts = hearts.filter(h => h.el !== heart); };
-                const animate = () => {
-                    if (opacity <= 0) return remove();
-                    posY -= 1.5;
-                    scale += 0.008;
-                    opacity -= 0.015;
-                    heart.style.top = posY + 'px';
-                    heart.style.opacity = opacity;
-                    heart.style.transform = `scale(${scale}) rotate(45deg)`;
-                    requestAnimationFrame(animate);
-                };
-                animate();
-                hearts.push({ el: heart });
-            };
-            t.addEventListener('click', (e) => { createHeart(e.clientX, e.clientY); });
-        })(window, document);
-
-        // 樱花特效
-        let img = new Image();
-        img.src = 'https://cdn.jsdelivr.net/gh/macagic/macagic.github.io/img/sakura.png';
-        img.crossOrigin = "anonymous";
-        
-        window.addEventListener('load', () => {
-            if (img.complete) startSakura();
-            else img.onload = startSakura;
-        });
-
-        function startSakura() {
-            const canvas = document.createElement('canvas');
-            canvas.id = 'canvas_sakura';
-            canvas.style.cssText = 'position:fixed;left:0;top:0;pointer-events:none;z-index:10';
-            document.body.appendChild(canvas);
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            class Sakura {
-                constructor() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = Math.random() * canvas.height;
-                    this.size = Math.random() * 0.6 + 0.4;
-                    this.rotate = Math.random() * 6;
-                    this.speedX = Math.random() * 1 - 0.5;
-                    this.speedY = Math.random() * 1 + 0.5;
-                }
-                update() {
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-                    this.rotate += 0.01;
-                    if (this.y > canvas.height) this.y = 0;
-                    if (this.x > canvas.width) this.x = 0;
-                    if (this.x < 0) this.x = canvas.width;
-                }
-                draw() {
-                    ctx.save();
-                    ctx.translate(this.x, this.y);
-                    ctx.rotate(this.rotate);
-                    ctx.drawImage(img, -20 * this.size, -20 * this.size, 40 * this.size, 40 * this.size);
-                    ctx.restore();
-                }
-            }
-
-            const sakuras = Array.from({ length: 40 }, () => new Sakura());
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                sakuras.forEach(s => { s.update(); s.draw(); });
-                requestAnimationFrame(animate);
-            }
-            animate();
-
-            window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            });
-        }
 
         // ==================================
         // 纯原生计时 —— 不依赖任何外部文件
         // ==================================
         function showLoveTime() {
-            // ✅ 在这里修改你们的相识时间
             var startDate = new Date("2026-05-17 20:31:00");
             var nowDate = new Date();
             
@@ -535,8 +407,10 @@
             document.getElementById("s").innerText = seconds;
         }
         
-        showLoveTime();
-        setInterval(showLoveTime, 1000);
+        document.addEventListener('DOMContentLoaded', function() {
+            showLoveTime();
+            setInterval(showLoveTime, 1000);
+        });
     </script>
 </body>
 </html>
