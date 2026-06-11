@@ -369,9 +369,7 @@
         })
     </script>
     <script>
-        // ==================================
         // DOM加载完成后执行
-        // ==================================
         document.addEventListener('DOMContentLoaded', function() {
             // 返回顶部
             const returnBtn = document.getElementById('returnTop');
@@ -385,10 +383,7 @@
             returnBtn.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-
-            // ==================================
-            // 纯原生计时 —— 不依赖任何外部文件
-            // ==================================
+            
             function showLoveTime() {
                 var startDate = new Date("2026-05-17 20:31:00");
                 var nowDate = new Date();
